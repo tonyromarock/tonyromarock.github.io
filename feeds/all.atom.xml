@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Rather Read Blog</title><link href="//tonyromarock.github.io/" rel="alternate"></link><link href="//tonyromarock.github.io/feeds/all.atom.xml" rel="self"></link><id>//tonyromarock.github.io/</id><updated>2010-12-05T19:30:00+01:00</updated><entry><title>My super title</title><link href="//tonyromarock.github.io/my-super-post.html" rel="alternate"></link><published>2010-12-03T10:20:00+01:00</published><updated>2010-12-05T19:30:00+01:00</updated><author><name>Alexis Metaireau</name></author><id>tag:tonyromarock.github.io,2010-12-03:/my-super-post.html</id><summary type="html">&lt;p&gt;Short version for index and feeds&lt;/p&gt;</summary><content type="html">&lt;p&gt;This is the content of my super blog post.&lt;/p&gt;</content><category term="pelican"></category><category term="publishing"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Rather Read Blog</title><link href="http://tonyromarock.github.io/" rel="alternate"></link><link href="http://tonyromarock.github.io/feeds/all.atom.xml" rel="self"></link><id>http://tonyromarock.github.io/</id><updated>2018-09-12T14:20:00+02:00</updated><entry><title>Installing legacy PyTorch for Windows</title><link href="http://tonyromarock.github.io/legacy-pytorch-750m.html" rel="alternate"></link><published>2018-09-12T14:20:00+02:00</published><updated>2018-09-12T14:20:00+02:00</updated><author><name>Peter Mortimer</name></author><id>tag:tonyromarock.github.io,2018-09-12:/legacy-pytorch-750m.html</id><summary type="html">&lt;p&gt;Some helpful notes when installing Pytorch 0.3.0 on a Windows PC with a GeForce GT 750M.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installing legacy PyTorch for Windows&lt;/h1&gt;
+&lt;p&gt;It can be useful to have a working version of PyTorch installed on your outdated local Windows machine to be able to run the prediction of pre-trained models written in PyTorch. I encountered a few roadblocks during my installation, where I really wished for more information on the web somewhere. Therefore, here are some notes I have made while installing PyTorch on my outdated laptop (Acer Aspire from 2013).&lt;/p&gt;
+&lt;p&gt;You cannot run the most recent version of PyTorch (0.4.0 at the time of writing) with GPU support on an older machine with an outdated graphics card. In my case my Acer Aspire from 2013 has a NVIDIA GeForce GT 750M. The GeForce GT 750M has a CUDA compute capability of 3.0. You can look up the compute capability of all CUDA GPUs on &lt;a href="https://developer.nvidia.com/cuda-gpus"&gt;this official NVIDIA page&lt;/a&gt;.
+The most recent version of PyTorch that still supports a GPU with a compute capability of 3.0 is PyTorch 0.3.0.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/peterjc123/pytorch-scripts"&gt;This GitHub repository&lt;/a&gt; from user &lt;strong&gt;peterjc123&lt;/strong&gt; is very helpful when trying to install PyTorch on Windows. The windows-specific PyTorch packages are available as conda packages here. 
+The README of this repository also refers to a &lt;a href="https://drive.google.com/drive/folders/0B-X0-FlSGfCYdTNldW02UGl4MXM"&gt;Google Drive&lt;/a&gt; that includes conda packages for legacy versions of PyTorch for Windows. Here you have to check for the correct conda package. In my case I am running Python 3.6 and CUDA 8.0. I had to download the following compressed package:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pytorch_legacy-0.3.0-py36_0.3.0cu80.tar.bz2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Move the compressed conda package to your working directory. Now you can locally install this conda package in your conda environment with the following command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;conda install --offline pytorch_legacy-0.3.0-py36_0.3.0cu80.tar.bz2
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You can quickly check if this version of PyTorch correctly detects the CUDA installation in your Python interpreter with the following commands:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;torch&lt;/span&gt;
+&lt;span class="n"&gt;torch&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;cuda&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;is_available&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If this returns &lt;strong&gt;True&lt;/strong&gt; then you should be ready to run legacy PyTorch on Windows.&lt;/p&gt;</content><category term="legacy PyTorch"></category><category term="Windows"></category><category term="GeForce GT 750M"></category></entry></feed>
