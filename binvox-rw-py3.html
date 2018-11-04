@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Using binvox-rw-py with Python 3 — Rather Read Blog</title>
+	<meta name="description" content="Title: Using binvox-rw-py with Python 3; Date: 2018-10-30; Author: Peter Mortimer">
+	<meta name="author" content="Peter">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="./theme/html5.js"></script>
+		<![endif]-->
+	<link href="./theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="./theme/css/local.css" rel="stylesheet">
+	<link href="./theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="./">Rather Read Blog</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Using binvox-rw-py with Python 3</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Peter Mortimer</h4>
+		</span>
+		<time datetime="2018-10-30T23:00:00+01:00" itemprop="datePublished">Di 30 Oktober 2018</time>
+	</div>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="./category/python.html" rel="category">Python</a>
+		</span>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			<a href="./tag/binvox-rw.html" rel="tag">binvox-rw</a>
+		</span>
+	</div>
+	<div itemprop="articleBody" class="article-body"><h1>intro to binvox-rw-py</h1>
+<p>The Python project <strong>binvox-rw-py</strong> is based on the <a href="https://www.patrickmin.com/binvox/">binvox</a> project from Patrick Min. It is a simple and easy-to-use tool to convert 3D model files into 3D voxel grids (it supports most of the common 3D model file formats: .obj, .ply, .stl; the output format is typically the custom <strong>.binvox</strong> file format). </p>
+<p>Some research projects in the field of 3D machine learning may use this library to create voxelized scenes for training. These voxelized scenes are used to train networks to learn a rudimentary understanding of the scene's geometry in a more easily quantifiable way. This is how I stumbled upon the <a href="https://github.com/dimatura/binvox-rw-py">binvox-rw-py</a> module, which enables you to read .binvox files as 3-dimensional Numpy arrays in Python. You can also write numpy arrays into .binvox using binvox-rw-py.</p>
+<h2>troubles with writing .binvox files in Python 3</h2>
+<p>The original binvox-rw-py from the GitHub user <a href="https://github.com/dimatura/">dimatura</a> has issues with writing .binvox files when running it in Python 3, since it was implemented with the byte handling of Python 2 in mind. I discovered this after a few frustrating hours by simply reading and writing the same .binvox file I generated for my project and comparing the resulting voxelized scenes using <a href="https://www.patrickmin.com/viewvox/">viewvox</a> (which is also from Patrick Min):</p>
+<p><img alt="Comparing the resulting voxelized scenes when reading and writing the same .binvox file using binvox-rw-py with Python 3. The left image shows the broken scene voxelization using dimatura's module with Python 3, while the right image shows the correct scene voxelization using pclausen's module with Python 3 " src="/images/binvox_write_compare.png"></p>
+<p>Luckly, the GitHub user <a href="https://github.com/pclausen/">pclausen</a> has already created a forked version of the <a href="https://github.com/pclausen/binvox-rw-py">binvox-rw-py</a> module that resolves this issue. This makes it possible to also use binvox-rw-py with Python 3.</p>
+<p>Unfortunately, the fixed binvox-rw-py module by pclausen does not seem as well known as the original module by dimatura if you compare the number of stars for each GitHub repository (at the time of writing dimatura's repository has 69 stars, while pclausen's repo only has 2 stars). pclausen has even originally created an <a href="https://github.com/dimatura/binvox-rw-py/issues/3">issue</a> in dimatura's issue tracker for the binvox-rw-py regarding the Python 3 writing issue. The issue has not been closed even until today.</p>
+<p>So I hope this post could help someone, who has been having issues using binvox-rw-py with Python 3 and save the person some time when trying to find the bug in his code.</p>
+<p>To install pclausen's binvox-rw-py module using pip, simply write the following command:</p>
+<div class="highlight"><pre><span></span>pip  install git+https://github.com/pclausen/binvox-rw-py
+</pre></div></div>
+	<hr>
+	<h2>Comments</h2>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href=".">Rather Read Blog</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/tonyromarock">GitHub</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="./category/python.html">Python (3)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://www.gregreda.com/">Greg Reda</a></li>
+							<li><a href="https://mkaz.blog/">mkaz.blog</a></li>
+							<li><a href="https://www.inference.vc/">inFERENCe</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Peter 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>
