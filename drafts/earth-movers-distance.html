@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Overview of the Earth Mover's Distance — My Notes on Data Science</title>
+	<meta name="description" content="Title: Overview of the Earth Mover's Distance; Date: 2019-05-14; Author: Peter Mortimer">
+	<meta name="author" content="Peter">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://tonyromarock.github.io/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--
+	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet">
+	-->
+	<link href="http://tonyromarock.github.io/theme/css/local.css" rel="stylesheet">
+	<link href="http://tonyromarock.github.io/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="http://tonyromarock.github.io/">My Notes on Data Science</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Overview of the Earth Mover's Distance</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Peter Mortimer</h4>
+		</span>
+		<time datetime="2019-05-14T10:30:00+02:00" itemprop="datePublished">Mai 14 2019</time>
+	</div>
+	<div itemprop="articleBody" class="article-body"><p>Many recent research papers [<a href="#pcn">1</a>,<a href="#pointoutnet">2</a>] focused on neural networks for point cloud data use one of the two distance metrics as loss function or evaluation metric: the Chamfer distance (<span class="math">\(D_{CD}\)</span>) and the Earth Mover's distance (<span class="math">\(D_{EMD}\)</span>). The calculation of the Chamfer distance is easy to grasp, while the Earth Mover's distance is less clearly defined. In this post I want to give a quick overview of the Earth Mover's distance and in particular how it is used for training point cloud data. The Earth Mover's distance is also known under the term Wasserstein metric, but we will refer to it as the Earth Mover's distance in this post.</p>
+<h2>References</h2>
+<p><span id='pcn'>[1] Yuan, Khot, Held, Mertz, Herbert (3DV 2018) <a href="https://www.cs.cmu.edu/~wyuan1/pcn/">PCN: Point Completion Network</a></span></p>
+<p><span id='pointoutnet'>[2] Fan, Su, Leonidas (CVPR 2017) <a href="https://arxiv.org/abs/1612.00603">A Point Set Generation Network for 3D Object Reconstruction from a Single Image</a></span></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        fonts: [['STIX', 'TeX']]," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
+	<hr>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="http://tonyromarock.github.io/category/python.html" rel="category">Python</a>
+		</span>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			<a href="http://tonyromarock.github.io/tag/earth-movers-distance.html" rel="tag">Earth Mover's Distance</a>
+		</span>
+		<span itemprop="keywords">
+			<a href="http://tonyromarock.github.io/tag/point-clouds.html" rel="tag">Point Clouds</a>
+		</span>
+		<span itemprop="keywords">
+			<a href="http://tonyromarock.github.io/tag/3d-machine-learning.html" rel="tag">3D Machine Learning</a>
+		</span>
+	</div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://tonyromarock.github.io">My Notes on Data Science</a></li>
+							<li><a href="http://tonyromarock.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/tonyromarock">GitHub</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://tonyromarock.github.io/category/python.html">Python (2)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://www.gregreda.com/">Greg Reda</a></li>
+							<li><a href="https://mkaz.blog/">mkaz.blog</a></li>
+							<li><a href="https://www.inference.vc/">inFERENCe</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Peter 2019</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>

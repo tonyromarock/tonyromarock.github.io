@@ -1,3 +1,14 @@
+/**
+ * Overrides of colors of bootstrap
+**/
+.bg-danger {
+	background-color: #eeeeee;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
 
 .my-list-style {
     margin-left: 0;
@@ -35,6 +46,7 @@
 
 .article-title {
     margin-bottom: 1em;
+    font-style: italic;
 }
 
 .article-header {
