@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Installing legacy PyTorch for Windows — My Notes on Data Science</title>
+	<title>Installing legacy PyTorch for Windows — A Place for Asides</title>
 	<meta name="description" content="Title: Installing legacy PyTorch for Windows; Date: 2018-09-12; Author: Peter Mortimer">
 	<meta name="author" content="Peter">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 <body>
 <div class="container">
 	<div class="page-header">
-		<h1><a href="http://tonyromarock.github.io/">My Notes on Data Science</a>
+		<h1><a href="http://tonyromarock.github.io/">A Place for Asides</a>
 			<br>	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
@@ -34,8 +34,7 @@
 		</span>
 		<time datetime="2018-09-12T14:20:00+02:00" itemprop="datePublished">September 12 2018</time>
 	</div>
-	<div itemprop="articleBody" class="article-body"><h1>Installing legacy PyTorch for Windows</h1>
-<p>It can be useful to have a working version of PyTorch installed on your outdated local Windows machine to be able to run the prediction of pre-trained models written in PyTorch. I encountered a few roadblocks during my installation, where I really wished for more information on the web somewhere. Therefore, here are some notes I have made while installing PyTorch on my outdated laptop (Acer Aspire from 2013).</p>
+	<div itemprop="articleBody" class="article-body"><p>It can be useful to have a working version of PyTorch installed on your outdated local Windows machine to be able to run the prediction of pre-trained models written in PyTorch. I encountered a few roadblocks during my installation, where I really wished for more information on the web somewhere. Therefore, here are some notes I have made while installing PyTorch on my outdated laptop (Acer Aspire from 2013).</p>
 <p>You cannot run the most recent version of PyTorch (0.4.0 at the time of writing) with GPU support on an older machine with an outdated graphics card. In my case my Acer Aspire from 2013 has a NVIDIA GeForce GT 750M. The GeForce GT 750M has a CUDA compute capability of 3.0. You can look up the compute capability of all CUDA GPUs on <a href="https://developer.nvidia.com/cuda-gpus">this official NVIDIA page</a>.
 The most recent version of PyTorch that still supports a GPU with a compute capability of 3.0 is PyTorch 0.3.0.</p>
 <p><a href="https://github.com/peterjc123/pytorch-scripts">This GitHub repository</a> from user <strong>peterjc123</strong> is very helpful when trying to install PyTorch on Windows. The windows-specific PyTorch packages are available as conda packages here. 
@@ -88,7 +87,7 @@ The README of this repository also refers to a <a href="https://drive.google.com
 					<div class="col-md-3">
 						<h4>Navigation</h4>
 						<ul class="list-unstyled my-list-style">
-							<li><a href="http://tonyromarock.github.io">My Notes on Data Science</a></li>
+							<li><a href="http://tonyromarock.github.io">A Place for Asides</a></li>
 							<li><a href="http://tonyromarock.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
 						</ul>
 					</div>
@@ -101,7 +100,7 @@ The README of this repository also refers to a <a href="https://drive.google.com
 					<div class="col-md-3">
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
-							<li><a href="http://tonyromarock.github.io/category/python.html">Python (2)</a></li>
+							<li><a href="http://tonyromarock.github.io/category/python.html">Python (3)</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3">
