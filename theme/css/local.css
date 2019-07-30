@@ -114,3 +114,12 @@ div.collapseheader {
 	cursor: pointer;
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+/**
+ * Overrides the design of the header links.
+**/
+
+.page-header-links {
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
