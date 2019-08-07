@@ -8,23 +8,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="http://tonyromarock.github.io/theme/html5.js"></script>
+		<script src="../theme/html5.js"></script>
 		<![endif]-->
-	<link href="http://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="../theme/css/ipython.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
 	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet">
 	-->
-	<link href="http://tonyromarock.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="http://tonyromarock.github.io/theme/css/pygments.css" rel="stylesheet">
+	<link href="../theme/css/local.css" rel="stylesheet">
+	<link href="../theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div class="container">
 	<div class="page-header">
 		<div class="row">
 			<div class="col-8 col-sm-8">
-			<h1><a href="http://tonyromarock.github.io/">A Place for Asides</a>
+			<h1><a href="../">A Place for Asides</a>
 				<br>			</div>
 			<div class="col-4 col-sm-4 page-header-links">
 				<p><a href="/pages/about.html">About</a> | <a href="/pages/previous-projects.html">Recent Projects</a> </p>
@@ -41,15 +41,18 @@
 		</span>
 		<time datetime="2019-05-14T10:30:00+02:00" itemprop="datePublished">May 14 2019</time>
 	</div>
-	<div itemprop="articleBody" class="article-body"><p>Many recent research papers [<a href="#pcn">1</a>,<a href="#pointoutnet">2</a>] focused on neural networks for 3D point cloud data use one of the two distance metrics as loss function or evaluation metric: the Chamfer distance (<span class="math">\(D_{CD}\)</span>) and the Earth Mover's distance (<span class="math">\(D_{EMD}\)</span>). The calculation of the Chamfer distance is easy to grasp, while the Earth Mover's distance is less clearly defined. In this post I want to give a quick overview of the Earth Mover's distance and in particular how it is used for training point cloud data. The Earth Mover's distance is also known under the term 1-Wasserstein metric, but we will refer to it as the Earth Mover's distance in this post.</p>
+	<div itemprop="articleBody" class="article-body"><p>Many recent research papers [<a href="#pcn">1</a>,<a href="#pointoutnet">2</a>] focused on neural networks for 3D point cloud data use one of the two distance metrics as loss function or evaluation metric: the Chamfer distance (<span class="math">\(D_{CD}\)</span>) and the Earth Mover's distance (<span class="math">\(D_{EMD}\)</span>). The calculation of the Chamfer distance is easy to grasp, while the Earth Mover's distance is less clearly defined. In this post I want to give an overview of the Earth Mover's distance and in particular how it is used for training point cloud data. The Earth Mover's distance is also known under the term 1-Wasserstein metric, but we will refer to it as the Earth Mover's distance in this post.</p>
 <h2>Introduction</h2>
 <p>Let's first look at the mathematical definition of the Earth Mover's distance:</p>
 <div class="math">$$ D_{EMD}(S_{1},S_{2}) = \min_{\phi: S_{1} \to S_{2} } \frac{1}{|S_{1}|} \sum_{x \in S_{1}} \| x - \phi(x) \|_{2}$$</div>
-<p>The function <span class="math">\(\phi\)</span> is a bijection (this also implies that <span class="math">\(D_{EMD}\)</span> is only defined for <span class="math">\(|S_{1}| = |S_{2}|\)</span>). This can be seen as a matching between points in <span class="math">\(S_{1}\)</span> to points in <span class="math">\(S_{2}\)</span>. The matching with the minimal euclidean distance therefore describes the Earth Mover's distance.</p>
+<p>The function <span class="math">\(\phi\)</span> is a bijection (this also implies that <span class="math">\(D_{EMD}\)</span> is only defined for <span class="math">\(|S_{1}| = |S_{2}|\)</span>). This can be seen as a matching between points in <span class="math">\(S_{1}\)</span> to points in <span class="math">\(S_{2}\)</span>. The matching with the minimal euclidean distance therefore describes the Earth Mover's distance.
+A common interpretation of the Earth Mover's distance describes the measure as the minimum amount of work needed to spread a mass of earth collected in piles to fill a set of holes in the same given space [<a href="#cvonline_emd">4</a>,<a href="#translocation">5</a>]. In this interpretation work is determined both by weight of the earth moved and the distance that the earth had to be moved to fill the holes.</p>
 <h2>References</h2>
 <p><span id='pcn'>[1] Yuan, Khot, Held, Mertz, Herbert (3DV 2018) <a href="https://www.cs.cmu.edu/~wyuan1/pcn/">PCN: Point Completion Network</a></span></p>
 <p><span id='pointoutnet'>[2] Fan, Su, Leonidas (CVPR 2017) <a href="https://arxiv.org/abs/1612.00603">A Point Set Generation Network for 3D Object Reconstruction from a Single Image</a></span></p>
 <p><span id='swd'>[3] Lee, Batra, Baig, Ulbricht (CVPR 2019) <a href="https://arxiv.org/abs/1903.04064">Sliced Wasserstein Discrepancy for Unsupervised Domain Adaptation.</a></span></p>
+<p><span id='cvonline_emd'>[4] CVOnline on the Earth Mover's Distance <a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/RUBNER/emd.htm">The Earth Mover's Distance</a></span></p>
+<p><span id='translocation'>[5] Kantorovitch, Lee (Management Science 1958) <a href="https://web.eecs.umich.edu/~pettie/matching/Kantorovitch-translocation-of-masses-1942.pdf">On the Translocation of Masses</a></span></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -115,20 +118,20 @@
 	<div>
 		Category:
 		<span itemprop="articleSection">
-			<a href="http://tonyromarock.github.io/category/python.html" rel="category">Python</a>
+			<a href="../category/python.html" rel="category">Python</a>
 		</span>
 	</div>
  
 	<div>
 		Tags:
 		<span itemprop="keywords">
-			<a href="http://tonyromarock.github.io/tag/earth-movers-distance.html" rel="tag">Earth Mover's Distance</a>
+			<a href="../tag/earth-movers-distance.html" rel="tag">Earth Mover's Distance</a>
 		</span>
 		<span itemprop="keywords">
-			<a href="http://tonyromarock.github.io/tag/point-clouds.html" rel="tag">Point Clouds</a>
+			<a href="../tag/point-clouds.html" rel="tag">Point Clouds</a>
 		</span>
 		<span itemprop="keywords">
-			<a href="http://tonyromarock.github.io/tag/3d-machine-learning.html" rel="tag">3D Machine Learning</a>
+			<a href="../tag/3d-machine-learning.html" rel="tag">3D Machine Learning</a>
 		</span>
 	</div>
 </div>
@@ -143,9 +146,8 @@
 					<div class="col-md-3">
 						<h4>Navigation</h4>
 						<ul class="list-unstyled my-list-style">
-							<li><a href="http://tonyromarock.github.io">A Place for Asides</a></li>
-							<li><a href="http://tonyromarock.github.io/pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
-							<li><a href="http://tonyromarock.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+							<li><a href="..">A Place for Asides</a></li>
+							<li><a href="../pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3">
@@ -157,7 +159,7 @@
 					<div class="col-md-3">
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
-							<li><a href="http://tonyromarock.github.io/category/python.html">Python (3)</a></li>
+							<li><a href="../category/python.html">Python (3)</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3">
