@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Accessing the IR Camera of the Dell XPS 13 in Ubuntu — A Place for Asides</title>
+	<meta name="description" content="Title: Accessing the IR Camera of the Dell XPS 13 in Ubuntu; Date: 2018-10-30; Author: Peter Mortimer">
+	<meta name="author" content="Peter">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="../theme/html5.js"></script>
+		<![endif]-->
+	<link href="../theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--
+	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet">
+	-->
+	<link href="../theme/css/local.css" rel="stylesheet">
+	<link href="../theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<div class="row">
+			<div class="col-8 col-sm-8">
+			<h1><a href="../">A Place for Asides</a>
+				<br>			</div>
+			<div class="col-4 col-sm-4 page-header-links">
+				<p><a href="/pages/about.html">About</a> | <a href="/pages/previous-projects.html">Previous Projects</a> | <a href="/">Blog</a> | <a href="/pages/books.html">Books I've read</a> </p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Accessing the IR Camera of the Dell XPS 13 in Ubuntu</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Peter Mortimer</h4>
+		</span>
+		<time datetime="2018-10-30T23:00:00+01:00" itemprop="datePublished">October 30 2018</time>
+	</div>
+	<div itemprop="articleBody" class="article-body"><p>I was interested in using the unusual webcam setup of my Dell XPS 13 notebook for some personal projects. The Dell XPS 13 does not only have a regular color camera but also an infrared camera. On Windows the infrared camera and the color camera are used for Windows Hello, which allows the user to secure his PC using facial authentication (<a href="https://github.com/boltgolt/howdy">Howdy</a> is the closest equivalent for Linux). But when I tried to access my infrared camera using tools like <code>fswebcam</code> or installing Howdy I ran into several issues.</p>
+<p>It turns out that the    </p>
+<h2>Links</h2>
+<ul>
+<li><a href="http://manpages.ubuntu.com/manpages/bionic/man1/fswebcam.1.html">fswebcam</a></li>
+<li><a href="https://stackoverflow.com/questions/25799264/characterizing-my-raw-camera-output">Stack Overflow: StackOverflow</a></li>
+<li><a href="https://lwn.net/Articles/218798/">Videl4Linux2: colors and formats</a></li>
+<li><a href="https://github.com/torvalds/linux/commit/557a5c7fe6503230f6a3a41441981aed6e897d17">uvcvideo: adding 8-bit IR format to kernel</a></li>
+<li><a href="https://github.com/boltgolt/howdy/issues/88#issuecomment-457708769">L8_IR format on Dell XPS 13 9370</a></li>
+<li><a href="https://topics-cdn.dell.com/pdf/xps-13-9370-laptop_setup-guide_en-us.pdf">Dell XPS 13 9370 specification</a></li>
+<li><a href="https://github.com/mpromonet/libv4l2cpp">libv4l2cpp</a></li>
+</ul></div>
+	<hr>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="../category/linux.html" rel="category">Linux</a>
+		</span>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			<a href="../tag/fswebcam.html" rel="tag">fswebcam</a>
+		</span>
+		<span itemprop="keywords">
+			<a href="../tag/image-processing.html" rel="tag">image processing</a>
+		</span>
+	</div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="..">A Place for Asides</a></li>
+							<li><a href="../pages/about.html"><i class="fa fa-About "></i> About</a></li>
+							<li><a href="../pages/blogroll.html"><i class="fa fa-Blogroll "></i> Blogroll</a></li>
+							<li><a href="../pages/books.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
+							<li><a href="../pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/tonyromarock">GitHub</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="../category/python.html">Python (3)</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Links</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://www.gregreda.com/">Greg Reda</a></li>
+							<li><a href="https://mkaz.blog/">mkaz.blog</a></li>
+							<li><a href="https://www.inference.vc/">inFERENCe</a></li>
+							<li><a href="http://matt.might.net/#blog">Matt Might</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Peter 2019</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>

@@ -123,3 +123,13 @@ div.collapseheader {
 	margin-top: 30px;
 	margin-bottom: 10px;
 }
+
+/**
+ * Center all images in a blog post
+**/
+
+div.article-body p img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

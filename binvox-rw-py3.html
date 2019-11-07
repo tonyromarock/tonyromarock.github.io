@@ -45,7 +45,7 @@
 <p>Some research projects in the field of 3D machine learning may use this library to create voxelized scenes for training. These voxelized scenes are used to train networks to learn a rudimentary understanding of the scene's geometry in a more easily quantifiable way. This is how I stumbled upon the <a href="https://github.com/dimatura/binvox-rw-py">binvox-rw-py</a> module, which enables you to read .binvox files as 3-dimensional Numpy arrays in Python. You can also write numpy arrays into .binvox using binvox-rw-py.</p>
 <h3>troubles with writing .binvox files in Python 3</h3>
 <p>The original binvox-rw-py from the GitHub user <a href="https://github.com/dimatura/">dimatura</a> has issues with writing .binvox files when running it in Python 3, since it was implemented with the byte handling of Python 2 in mind. I discovered this after a few frustrating hours by simply reading and writing the same .binvox file I generated for my project and comparing the resulting voxelized scenes using <a href="https://www.patrickmin.com/viewvox/">viewvox</a> (which is also from Patrick Min):</p>
-<p><img alt="Comparing the resulting voxelized scenes when reading and writing the same .binvox file using binvox-rw-py with Python 3. The left image shows the broken scene voxelization using dimatura's module with Python 3, while the right image shows the correct scene voxelization using pclausen's module with Python 3." src="./images/binvox_write_compare.png"></p>
+<p><img alt="Comparing the resulting voxelized scenes when reading and writing the same .binvox file using binvox-rw-py with Python 3. The left image shows the broken scene voxelization using dimatura's module with Python 3, while the right image shows the correct scene voxelization using pclausen's module with Python 3." src="./images/binvox/binvox_write_compare.png"></p>
 <p>Luckly, the GitHub user <a href="https://github.com/pclausen/">pclausen</a> has already created a forked version of the <a href="https://github.com/pclausen/binvox-rw-py">binvox-rw-py</a> module that resolves this issue. This makes it possible to also use binvox-rw-py with Python 3.</p>
 <p>Unfortunately, the fixed binvox-rw-py module by pclausen does not seem as well known as the original module by dimatura if you compare the number of stars for each GitHub repository (at the time of writing dimatura's repository has 69 stars, while pclausen's repo only has 2 stars). pclausen has even originally created an <a href="https://github.com/dimatura/binvox-rw-py/issues/3">issue</a> in dimatura's issue tracker for the binvox-rw-py regarding the Python 3 writing issue. The issue has not been closed even until today.</p>
 <p>So I hope this post could help someone, who has been having issues using binvox-rw-py with Python 3 and save the person some time when trying to find the bug in his code.</p>
@@ -97,6 +97,7 @@
 					<div class="col-md-3">
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
+							<li><a href="./category/linux.html">Linux (1)</a></li>
 							<li><a href="./category/python.html">Python (3)</a></li>
 						</ul>
 					</div>
@@ -106,6 +107,7 @@
 							<li><a href="http://www.gregreda.com/">Greg Reda</a></li>
 							<li><a href="https://mkaz.blog/">mkaz.blog</a></li>
 							<li><a href="https://www.inference.vc/">inFERENCe</a></li>
+							<li><a href="http://matt.might.net/#blog">Matt Might</a></li>
 						</ul>
 					</div>
 				</div>
