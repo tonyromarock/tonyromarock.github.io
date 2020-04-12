@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Installing legacy PyTorch for Windows — A Place for Asides</title>
-	<meta name="description" content="Title: Installing legacy PyTorch for Windows; Date: 2018-09-12; Author: Peter Mortimer">
+	<title>essays — A Place for Asides</title>
+	<meta name="description" content="All posts which refer to tag essays">
 	<meta name="author" content="Peter">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -33,56 +33,15 @@
 	</div>
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="text-center article-header">
-		<h1 itemprop="name headline" class="article-title">Installing legacy PyTorch for Windows</h1>
-		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
-			<h4 itemprop="name">Peter Mortimer</h4>
-		</span>
-		<time datetime="2018-09-12T14:20:00+02:00" itemprop="datePublished">September 12 2018</time>
-	</div>
-	<div itemprop="articleBody" class="article-body"><p>It can be useful to have a working version of PyTorch installed on your outdated local Windows machine to be able to run the prediction of pre-trained models written in PyTorch. I encountered a few roadblocks during my installation, where I really wished for more information on the web somewhere. Therefore, here are some notes I have made while installing PyTorch on my outdated laptop (Acer Aspire from 2013).</p>
-<p>You cannot run the most recent version of PyTorch (0.4.0 at the time of writing) with GPU support on an older machine with an outdated graphics card. In my case my Acer Aspire from 2013 has a NVIDIA GeForce GT 750M. The GeForce GT 750M has a CUDA compute capability of 3.0. You can look up the compute capability of all CUDA GPUs on <a href="https://developer.nvidia.com/cuda-gpus">this official NVIDIA page</a>.
-The most recent version of PyTorch that still supports a GPU with a compute capability of 3.0 is PyTorch 0.3.0.</p>
-<p><a href="https://github.com/peterjc123/pytorch-scripts">This GitHub repository</a> from user <strong>peterjc123</strong> is very helpful when trying to install PyTorch on Windows. The windows-specific PyTorch packages are available as conda packages here. 
-The README of this repository also refers to a <a href="https://drive.google.com/drive/folders/0B-X0-FlSGfCYdTNldW02UGl4MXM">Google Drive</a> that includes conda packages for legacy versions of PyTorch for Windows. Here you have to check for the correct conda package. In my case I am running Python 3.6 and CUDA 8.0. I had to download the following compressed package:</p>
-<div class="highlight"><pre><span></span>pytorch_legacy-0.3.0-py36_0.3.0cu80.tar.bz2
-</pre></div>
-
-
-<p>Move the compressed conda package to your working directory. Now you can locally install this conda package in your conda environment with the following command.</p>
-<div class="highlight"><pre><span></span>conda install --offline pytorch_legacy-0.3.0-py36_0.3.0cu80.tar.bz2
-</pre></div>
-
-
-<p>You can quickly check if this version of PyTorch correctly detects the CUDA installation in your Python interpreter with the following commands:</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
-<span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span>
-</pre></div>
-
-
-<p>If this returns <strong>True</strong> then you should be ready to run legacy PyTorch on Windows.</p></div>
-	<hr>
-	<div>
-		Category:
-		<span itemprop="articleSection">
-			<a href="http://tonyromarock.github.io/category/python.html" rel="category">Python</a>
-		</span>
-	</div>
- 
-	<div>
-		Tags:
-		<span itemprop="keywords">
-			<a href="http://tonyromarock.github.io/tag/legacy-pytorch.html" rel="tag">legacy PyTorch</a>
-		</span>
-		<span itemprop="keywords">
-			<a href="http://tonyromarock.github.io/tag/windows.html" rel="tag">Windows</a>
-		</span>
-		<span itemprop="keywords">
-			<a href="http://tonyromarock.github.io/tag/geforce-gt-750m.html" rel="tag">GeForce GT 750M</a>
-		</span>
-	</div>
-</div>
+<h1>Tag <small>essays</small></h1>
+<table class="table">
+    <tbody>
+        <tr>
+        <td>12 Apr 2020</td>
+        <td><a href='http://tonyromarock.github.io/saving-his-life.html'>Saving His Life by Lee Sandlin</a></td>
+        </tr>
+    </tbody>
+</table>
 		</div>
 	</div> 	<!-- <hr> -->
 </div> <!-- /container -->
