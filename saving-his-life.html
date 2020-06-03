@@ -11,6 +11,7 @@
 		<script src="http://tonyromarock.github.io/theme/html5.js"></script>
 		<![endif]-->
 	<link href="http://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="http://tonyromarock.github.io/theme/css/jquery.tocify.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
@@ -41,14 +42,14 @@
 		</span>
 		<time datetime="2020-04-12T23:00:00+02:00" itemprop="datePublished">April 12 2020</time>
 	</div>
-	<div itemprop="articleBody" class="article-body"><p>The first article I have read of Lee Sandlin was <a href="http://leesandlin.com/articles/LosingTheWar.htm"><em>Losing The War</em></a>. <em>Losing The War</em> was featured in Ira Glass' anthology <em>The New Kings of Nonfiction</em>. This led me looking for more articles by Lee Sandlin. Many of his popular articles are freely available on his personal page and that is where I found his essay <a href="http://www.leesandlin.com/articles/SavingHisLife.htm"><em>Saving His Life</em></a>.</p>
+	<div itemprop="articleBody" class="article-body"><p>The first article I have read of Lee Sandlin was <a href="http://leesandlin.com/articles/LosingTheWar.htm"><em>Losing The War</em></a>. <em>Losing The War</em> was featured in Ira Glass' anthology <em>The New Kings of Nonfiction</em>. This led me looking for more articles by Lee Sandlin. Many of his popular articles are freely available on his personal page and that is where I found his article <a href="http://www.leesandlin.com/articles/SavingHisLife.htm"><em>Saving His Life</em></a>.</p>
 <p>In <em>Saving His Life</em> Lee Sandlin chronicles the life of his father-in-law Nick Cherniavsky. The story of how Nick ended up in the US is very interesting. Nick lived in different Russian communities in Asia and eventually arrived in the USA as a refugee. </p>
 <p>His memoirs show the interesting history some cities in Asia share. They served as a meeting point for many ehnic groups. These circumstances were createed by the many wars for territory in the first half of the 20th century and the preceding expansive colonialism by the global powers. Nick's memories of cities like Shanghai and Tsingtao give the impression of a globalized world without the many technologies we commonly associate with the term today. </p>
-<p>It is also a story about a time where, from our perspective, these seemingly large and well-remembered events happened. Events later generations would learn by heart in history class. The type of events that break up the daily routine and keep everyone hooked to their TV.</p>
+<p>It is also a story about a time where, from our perspective, these seemingly large and well-remembered events happened. Events later generations would learn by heart in history class. The type of events that break up the daily routine and keep everyone hooked to their TV (or smartphone nowadays).</p>
 <p>But back then information didn't spread as fast and the way Nick learns about different historical events is fascinating. It is interesting to see how these global events are interwoven into Nick's life in many different ways. </p>
 <p>The article is rather long, which makes reading it on your web browser not always very practical. I have converted the story to the .epub format, so that someone interested in reading <em>Saving His Life</em> can comfortably read it on their eBook reader:</p>
 <p><a href="http://tonyromarock.github.io/extra/ebooks/Saving_His_Life.epub">Download Lee Sandlin's <em>Saving His Life</em> for your eBook reader</a></p>
-<p>I hope you enjoy this article as much as I did. </p></div>
+<p>I hope you enjoy Lee Sandlin's article as much as I did. </p></div>
 	<hr>
 	<div>
 		Category:
@@ -97,7 +98,7 @@
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://tonyromarock.github.io/category/linux.html">Linux (1)</a></li>
 							<li><a href="http://tonyromarock.github.io/category/nonfiction.html">Nonfiction (1)</a></li>
-							<li><a href="http://tonyromarock.github.io/category/python.html">Python (3)</a></li>
+							<li><a href="http://tonyromarock.github.io/category/python.html">Python (4)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -115,6 +116,8 @@
 </div>
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery.tocify.min.js""></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -127,6 +130,17 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+$(function() { 
+	var toc = $("#toc").tocify({
+		context:"div.article-body", 
+		selectors:"h1,h3",
+		showAndHide:"false",
+		extendPage:"false",
+		history:"true",
+		scrollHistory:"true"
+	}).data("toc-tocify"); 
+
 });
 </script>
 </body>

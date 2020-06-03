@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>A Place for Asides <small>Peter Mortimer</small></title>
-	<meta name="description" content="Coding, scientific development, finance, data analysis, visualization, statistics, and machine learning">
+	<meta name="description" content="Coding, data analysis, visualization, statistics, and machine learning">
 	<meta name="author" content="Peter">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -11,6 +11,7 @@
 		<script src="http://tonyromarock.github.io/theme/html5.js"></script>
 		<![endif]-->
 	<link href="http://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="http://tonyromarock.github.io/theme/css/jquery.tocify.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
@@ -81,6 +82,34 @@
 	</span>
 	<span itemprop="keywords">
 		<a href="http://tonyromarock.github.io/tag/image-processing.html" rel="tag">image processing</a>
+	</span>
+</div>
+<hr>
+        
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<a href="http://tonyromarock.github.io/earth-movers-distance.html">
+		<h2 itemprop="name headline">Visual Analysis of the Earth Mover's Distance</h2>
+	</a>
+	<time datetime="2019-05-14T10:30:00+02:00" itemprop="datePublished">May 14 2019</time>
+	&nbsp;—&nbsp;
+	<span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<span itemprop="name">Peter Mortimer</span>
+	</span>
+	<div class="summary"><p>What exactly is the Earth Mover's distance and how is it used in 3D Machine Learning?</p></div>
+	Category:
+	<span itemprop="articleSection">
+		<a href="http://tonyromarock.github.io/category/python.html" rel="category">Python</a>
+	</span>
+	Tags:
+ 
+	<span itemprop="keywords">
+		<a href="http://tonyromarock.github.io/tag/earth-movers-distance.html" rel="tag">Earth Mover's Distance</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="http://tonyromarock.github.io/tag/point-clouds.html" rel="tag">Point Clouds</a>
+	</span>
+	<span itemprop="keywords">
+		<a href="http://tonyromarock.github.io/tag/3d-machine-learning.html" rel="tag">3D Machine Learning</a>
 	</span>
 </div>
 <hr>
@@ -201,7 +230,7 @@
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://tonyromarock.github.io/category/linux.html">Linux (1)</a></li>
 							<li><a href="http://tonyromarock.github.io/category/nonfiction.html">Nonfiction (1)</a></li>
-							<li><a href="http://tonyromarock.github.io/category/python.html">Python (3)</a></li>
+							<li><a href="http://tonyromarock.github.io/category/python.html">Python (4)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -219,6 +248,8 @@
 </div>
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery.tocify.min.js""></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -231,6 +262,17 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+$(function() { 
+	var toc = $("#toc").tocify({
+		context:"div.article-body", 
+		selectors:"h1,h3",
+		showAndHide:"false",
+		extendPage:"false",
+		history:"true",
+		scrollHistory:"true"
+	}).data("toc-tocify"); 
+
 });
 </script>
 </body>

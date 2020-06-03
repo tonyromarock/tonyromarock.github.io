@@ -11,6 +11,7 @@
 		<script src="http://tonyromarock.github.io/theme/html5.js"></script>
 		<![endif]-->
 	<link href="http://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="http://tonyromarock.github.io/theme/css/jquery.tocify.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
@@ -20,7 +21,7 @@
 	<link href="http://tonyromarock.github.io/theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div id="toc"></div><div class="container">
 	<div class="page-header">
 		<div class="row">
 			<div class="col-8 col-sm-8">
@@ -41,9 +42,11 @@
 		</span>
 		<time datetime="2018-10-30T23:00:00+01:00" itemprop="datePublished">October 30 2018</time>
 	</div>
-	<div itemprop="articleBody" class="article-body"><p>The Python project <strong>binvox-rw-py</strong> is based on the <a href="https://www.patrickmin.com/binvox/">binvox</a> project from Patrick Min. It is a simple and easy-to-use tool to convert 3D model files into 3D voxel grids (it supports most of the common 3D model file formats: .obj, .ply, .stl; the output format is typically the custom <strong>.binvox</strong> file format).</p>
+	<div itemprop="articleBody" class="article-body"><h1 style="visibility:hidden;">Using binvox-rw-py with Python 3</h1>
+
+<p>The Python project <strong>binvox-rw-py</strong> is based on the <a href="https://www.patrickmin.com/binvox/">binvox</a> project from Patrick Min. It is a simple and easy-to-use tool to convert 3D model files into 3D voxel grids (it supports most of the common 3D model file formats: .obj, .ply, .stl; the output format is typically the custom <strong>.binvox</strong> file format).</p>
 <p>Some research projects in the field of 3D machine learning may use this library to create voxelized scenes for training. These voxelized scenes are used to train networks to learn a rudimentary understanding of the scene's geometry in a more easily quantifiable way. This is how I stumbled upon the <a href="https://github.com/dimatura/binvox-rw-py">binvox-rw-py</a> module, which enables you to read .binvox files as 3-dimensional Numpy arrays in Python. You can also write numpy arrays into .binvox using binvox-rw-py.</p>
-<h3>troubles with writing .binvox files in Python 3</h3>
+<h3>Troubles with writing .binvox files in Python 3</h3>
 <p>The original binvox-rw-py from the GitHub user <a href="https://github.com/dimatura/">dimatura</a> has issues with writing .binvox files when running it in Python 3, since it was implemented with the byte handling of Python 2 in mind. I discovered this after a few frustrating hours by simply reading and writing the same .binvox file I generated for my project and comparing the resulting voxelized scenes using <a href="https://www.patrickmin.com/viewvox/">viewvox</a> (which is also from Patrick Min):</p>
 <p><img alt="Comparing the resulting voxelized scenes when reading and writing the same .binvox file using binvox-rw-py with Python 3. The left image shows the broken scene voxelization using dimatura's module with Python 3, while the right image shows the correct scene voxelization using pclausen's module with Python 3." src="http://tonyromarock.github.io/images/binvox/binvox_write_compare.png"></p>
 <p>Luckly, the GitHub user <a href="https://github.com/pclausen/">pclausen</a> has already created a forked version of the <a href="https://github.com/pclausen/binvox-rw-py">binvox-rw-py</a> module that resolves this issue. This makes it possible to also use binvox-rw-py with Python 3.</p>
@@ -100,7 +103,7 @@
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://tonyromarock.github.io/category/linux.html">Linux (1)</a></li>
 							<li><a href="http://tonyromarock.github.io/category/nonfiction.html">Nonfiction (1)</a></li>
-							<li><a href="http://tonyromarock.github.io/category/python.html">Python (3)</a></li>
+							<li><a href="http://tonyromarock.github.io/category/python.html">Python (4)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -118,6 +121,8 @@
 </div>
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery.tocify.min.js""></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -130,6 +135,17 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+$(function() { 
+	var toc = $("#toc").tocify({
+		context:"div.article-body", 
+		selectors:"h1,h3",
+		showAndHide:"false",
+		extendPage:"false",
+		history:"true",
+		scrollHistory:"true"
+	}).data("toc-tocify"); 
+
 });
 </script>
 </body>

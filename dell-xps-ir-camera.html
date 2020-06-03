@@ -11,6 +11,7 @@
 		<script src="http://tonyromarock.github.io/theme/html5.js"></script>
 		<![endif]-->
 	<link href="http://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
+	<link href="http://tonyromarock.github.io/theme/css/jquery.tocify.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
@@ -128,7 +129,7 @@
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://tonyromarock.github.io/category/linux.html">Linux (1)</a></li>
 							<li><a href="http://tonyromarock.github.io/category/nonfiction.html">Nonfiction (1)</a></li>
-							<li><a href="http://tonyromarock.github.io/category/python.html">Python (3)</a></li>
+							<li><a href="http://tonyromarock.github.io/category/python.html">Python (4)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -146,6 +147,8 @@
 </div>
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="http://tonyromarock.github.io/theme/js/jquery.tocify.min.js""></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -158,6 +161,17 @@ jQuery(document).ready(function($) {
 			});
 		});
 	});
+});
+$(function() { 
+	var toc = $("#toc").tocify({
+		context:"div.article-body", 
+		selectors:"h1,h3",
+		showAndHide:"false",
+		extendPage:"false",
+		history:"true",
+		scrollHistory:"true"
+	}).data("toc-tocify"); 
+
 });
 </script>
 </body>
