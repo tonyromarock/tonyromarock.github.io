@@ -42,13 +42,15 @@
 		</span>
 		<time datetime="2019-05-14T10:30:00+02:00" itemprop="datePublished">May 14 2019</time>
 	</div>
-	<div itemprop="articleBody" class="article-body"><p>Many recent research papers [<a href="#pcn">1</a>,<a href="#pointoutnet">2</a>] focused on neural networks for 3D point cloud data use one of the two distance metrics as loss function or evaluation metric: the Chamfer distance (<span class="math">\(D_{CD}\)</span>) and the Earth Mover's distance (<span class="math">\(D_{EMD}\)</span>). The calculation of the Chamfer distance is easy to grasp, while the Earth Mover's distance is less clearly defined. In this post I want to give an overview of the Earth Mover's distance and in particular how it is used for training point cloud data. The Earth Mover's distance is also known under the term 1-Wasserstein metric, but we will refer to it as the Earth Mover's distance in this post.</p>
-<h2>Introduction</h2>
+	<div itemprop="articleBody" class="article-body"><h1 style="visibility:hidden;">Visual Analysis of the Earth Mover's Distance</h1>
+
+<p>Many recent research papers [<a href="#pcn">1</a>,<a href="#pointoutnet">2</a>] focused on neural networks for 3D point cloud data use one of the two distance metrics as loss function or evaluation metric: the Chamfer distance (<span class="math">\(D_{CD}\)</span>) and the Earth Mover's distance (<span class="math">\(D_{EMD}\)</span>). The calculation of the Chamfer distance is easy to grasp, while the Earth Mover's distance is less clearly defined. In this post I want to give an overview of the Earth Mover's distance and in particular how it is used for training point cloud data. The Earth Mover's distance is also known under the term 1-Wasserstein metric, but we will refer to it as the Earth Mover's distance in this post.</p>
+<h3>Introduction</h3>
 <p>Let's first look at the mathematical definition of the Earth Mover's distance:</p>
 <div class="math">$$ D_{EMD}(S_{1},S_{2}) = \min_{\phi: S_{1} \to S_{2} } \frac{1}{|S_{1}|} \sum_{x \in S_{1}} \| x - \phi(x) \|_{2}$$</div>
 <p>The function <span class="math">\(\phi\)</span> is a bijection (this also implies that <span class="math">\(D_{EMD}\)</span> is only defined for <span class="math">\(|S_{1}| = |S_{2}|\)</span>). This can be seen as a matching between points in <span class="math">\(S_{1}\)</span> to points in <span class="math">\(S_{2}\)</span>. The matching with the minimal euclidean distance therefore describes the Earth Mover's distance.
 A common interpretation of the Earth Mover's distance describes the measure as the minimum amount of work needed to spread a mass of earth collected in piles to fill a set of holes in the same given space [<a href="#cvonline_emd">4</a>,<a href="#translocation">5</a>]. In this interpretation work is determined both by the weight of the earth moved and the distance that the earth had to be moved to fill the holes.</p>
-<h2>References</h2>
+<h3>References</h3>
 <p><span id='pcn'>[1] Yuan, Khot, Held, Mertz, Herbert (3DV 2018) <a href="https://www.cs.cmu.edu/~wyuan1/pcn/">PCN: Point Completion Network</a></span></p>
 <p><span id='pointoutnet'>[2] Fan, Su, Leonidas (CVPR 2017) <a href="https://arxiv.org/abs/1612.00603">A Point Set Generation Network for 3D Object Reconstruction from a Single Image</a></span></p>
 <p><span id='swd'>[3] Lee, Batra, Baig, Ulbricht (CVPR 2019) <a href="https://arxiv.org/abs/1903.04064">Sliced Wasserstein Discrepancy for Unsupervised Domain Adaptation.</a></span></p>
