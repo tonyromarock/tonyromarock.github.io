@@ -9,7 +9,6 @@ a:hover {
 	text-decoration: none;
 }
 
-
 .my-list-style {
     margin-left: 0;
 }
@@ -19,10 +18,8 @@ a:hover {
 }
 
 .aw-footer {
-    margin-top: 2em;
     border-top: 2px solid lightgrey;
     border-bottom: 2px solid lightgrey;
-/*    height: 250px;*/
     padding-top: 2em;
     padding-bottom: 2em;
 }
@@ -119,6 +116,11 @@ div.collapseheader {
  * Overrides the design of the header links.
 **/
 
+.page-header {
+	padding-left: 15px;
+	border-bottom: 1px solid #aaa;
+}
+
 .page-header-links {
 	margin-top: 30px;
 	margin-bottom: 10px;
@@ -132,4 +134,39 @@ div.article-body p img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/**
+ * Add background pattern image and correct background styling
+**/
+body {
+	background-image: url("../images/background/chevron.png");
+  	background-repeat: repeat;
+}
+
+.main.container {
+	background-color: white;
+	border-left: 1px #eeeeee solid;
+	border-right: 1px #eeeeee solid;
+	box-shadow: 1px 2px 3px #aaaaaa, -1px 2px 3px #aaaaaa;
+	min-height: 800px;
+	padding-bottom: 15px;
+}
+
+footer .container {
+	background-color: #eeeeee;
+	border-left: none;
+	border-right: none;
+	box-shadow: none;
+}
+
+.bottom.container {
+	width: 100%;
+	background-color: white;
+}
+
+/* Styling for image captions in posts */
+.caption {
+	font-style: italic;
+	color: #555555;
 }

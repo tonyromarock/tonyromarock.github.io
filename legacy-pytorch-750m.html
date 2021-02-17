@@ -12,6 +12,7 @@
 		<![endif]-->
 	<link href="./theme/css/ipython.css" rel="stylesheet">
 	<link href="./theme/css/jquery.tocify.css" rel="stylesheet">
+	<link href="./theme/css/lightbox.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
@@ -21,14 +22,14 @@
 	<link href="./theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div class="container main">
 	<div class="page-header">
 		<div class="row">
 			<div class="col-8 col-sm-8">
 			<h1><a href="./">A Place for Asides</a>
 				<br>			</div>
 			<div class="col-4 col-sm-4 page-header-links">
-				<p><a href="/pages/about.html">About</a> | <a href="/pages/previous-projects.html">Previous Projects</a> | <a href="/">Blog</a> | <a href="/pages/books.html">Books I've read</a> </p>
+				<p><a href="/pages/about.html">About</a> | <a href="/pages/publications.html">Publications</a> | <a href="/pages/previous-projects.html">Previous Projects</a> | <a href="/">Blog</a> | <a href="/pages/books.html">Book List</a> </p>
 			</div>
 		</div>
 	</div>
@@ -98,8 +99,9 @@ The README of this repository also refers to a <a href="https://drive.google.com
 							<li><a href=".">A Place for Asides</a></li>
 							<li><a href="./pages/about.html"><i class="fa fa-About "></i> About</a></li>
 							<li><a href="./pages/blogroll.html"><i class="fa fa-Blogroll "></i> Blogroll</a></li>
-							<li><a href="./pages/books.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
+							<li><a href="./pages/books.html"><i class="fa fa-Books I've Read "></i> Books I've Read</a></li>
 							<li><a href="./pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
+							<li><a href="./pages/publications.html"><i class="fa fa-Publications "></i> Publications</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3">
@@ -121,7 +123,7 @@ The README of this repository also refers to a <a href="https://drive.google.com
 		</div>
 	</div>
 </footer>
-<div class="container">
+<div class="container bottom">
 	<div class="row">
 		<div class="col-md-12 text-center center-block aw-bottom">
 			<p>&copy; Peter 2020</p>
@@ -132,7 +134,8 @@ The README of this repository also refers to a <a href="https://drive.google.com
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="./theme/js/jquery-ui-1.9.1.custom.min.js"></script>
-<script src="./theme/js/jquery.tocify.min.js""></script>
+<script src="./theme/js/jquery.tocify.min.js"></script>
+<script src="./theme/js/lightbox.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
@@ -156,6 +159,9 @@ $(function() {
 		scrollHistory:"true"
 	}).data("toc-tocify"); 
 
+});
+lightbox.option({
+	'wrapAround': true
 });
 </script>
 </body>
