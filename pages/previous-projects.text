@@ -65,7 +65,11 @@ data-alt="Here are a few example predictions of Factored3D on real world indoor 
 <p>February 2018 - July 2018</p>
 </div>
 <div class="col-4 col-sm-4">
-<img src="/images/prev_projects/highway_detector.png">
+<a href="/images/prev_projects/highway_detector.png" 
+data-lightbox="itu-cv-lightbox"
+data-title="During my exchange at the IT University of Copenhagen I worked on creating a car detector as part of the introduction to Computer Vision and Image Analysis course. For the car detector I used a shallow CNN, which took potential preselected image patches as input. The preselected image patches were determined by using a traditional background subtraction from an empty image of the highway." 
+data-alt="">
+<img src="/images/prev_projects/highway_detector.png"></a>
 </div>
 </div>
 <hr>
@@ -78,7 +82,11 @@ data-alt="Here are a few example predictions of Factored3D on real world indoor 
 <p>August 2017 - November 2017</p>
 </div>
 <div class="col-4 col-sm-4">
-<img src="/images/prev_projects/cell_towers_mexico.png">
+<a href="/images/prev_projects/cell_towers_mexico.png" 
+data-lightbox="spirent-intern-lightbox"
+data-title="This graph marks the locations of all cell towers in Mexico and compares this to all cell towers within a 10km radius to a commercial airport in Mexico. For the prototype I was developing, we were focusing on air travel and reducing the query size by limiting the search space of possible cell towers made the analysis feasible. You can tell from the left graph, that cell towers are placed along main roads and around highly populated areas." 
+data-alt="This graph marks the locations of all cell towers in Mexico and compares this to all cell towers within a 10km radius to a commercial airport in Mexico. For the prototype I was developing, we were focusing on air travel and reducing the query size by limiting the search space of possible cell towers made the analysis feasible. You can tell from the left graph, that cell towers are placed along main roads and around highly populated areas.">
+<img src="/images/prev_projects/cell_towers_mexico.png"></a>
 </div>
 </div>
 <hr>

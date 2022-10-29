@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Place for Asides - Visualization</title><link href="http://tonyromarock.github.io/" rel="alternate"></link><link href="http://tonyromarock.github.io/feeds/visualization.atom.xml" rel="self"></link><id>http://tonyromarock.github.io/</id><updated>2021-07-27T23:00:00+02:00</updated><entry><title>Tree Diagram for Outdoor Datasets</title><link href="http://tonyromarock.github.io/outdoor-datasets-tree-diagram.html" rel="alternate"></link><published>2021-07-27T23:00:00+02:00</published><updated>2021-07-27T23:00:00+02:00</updated><author><name>Peter Mortimer</name></author><id>tag:tonyromarock.github.io,2021-07-27:/outdoor-datasets-tree-diagram.html</id><summary type="html">&lt;p&gt;An interactive tree diagram for reviewing the semantic classes of different Outdoor datasets.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Many new datasets for the semantic segmentation of driving scenes have been released in recent years. It is not always clear how many of the semantic classes of the datasets overlap and how fine-granular the annotation of each dataset is.&lt;/p&gt;
+&lt;p&gt;This interactive tree diagram allows you to unfold the common categories of these driving datasets and to observe which of the given datasets can be used for training on this level of granularity.&lt;/p&gt;
+&lt;div id="tree-div" style="text-align: center"&gt;&lt;/div&gt;
+
+&lt;p&gt;This is the text after the tree diagram.&lt;/p&gt;
+&lt;p&gt;&lt;link rel="stylesheet" href="extra/vis/tree-diagram/style.css"&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"&gt;&lt;/script&gt;
+&lt;script src="extra/vis/tree-diagram/tree.js"&gt;&lt;/script&gt;&lt;/p&gt;</content><category term="d3.js"></category><category term="datasets"></category></entry></feed>
