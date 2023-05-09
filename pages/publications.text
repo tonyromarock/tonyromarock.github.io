@@ -16,7 +16,7 @@ Here are all my publcations listed with links to the papers and repositories.
 <div class="col-2 col-sm-2">
 <a href="/images/publications/icpr2020/image_cube.png" 
 data-lightbox="uoa-lightbox" 
-data-title="" 
+data-title="TAS500 is a novel semantic segmentation dataset for autonomous driving in unstructured environments. TAS500 offers fine-grained vegetation and terrain classes to learn drivable surfaces and natural obstacles in outdoor scenes effectively." 
 data-alt=""><img src="/images/publications/icpr2020/image_cube.png" /></a>
 </div>
 <div class="col-10 col-sm-10">
@@ -33,14 +33,31 @@ data-alt=""><img src="/images/publications/icpr2020/image_cube.png" /></a>
 <div class="col-2 col-sm-2">
 <a href="/images/publications/iros2022/title-card.png" 
 data-lightbox="uoa-lightbox" 
-data-title="" 
+data-title="TAS-NIR is a novel dataset consisting of 209 semantically segmented and aligned VIS+NIR images in different driving scenarios in unstructured outdoor environments. The fine-grained semantic segmentation of the different vegetation and ground surface types allows closer analysis of VIS+NIR based features. The visible light color image (VIS) and near infrared image (NIR) can be combined to generate vegetation indices like the NDVI image (bottom)." 
 data-alt=""><img src="/images/publications/iros2022/title-card.png" /></a>
 </div>
 <div class="col-10 col-sm-10">
 <p style="margin: 0px;"><b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
 <p style="margin: 0px;">"TAS-NIR: A VIS+NIR Dataset for Fine-grained Semantic Segmentation in Unstructured Outdoor Environments"</p>
 <p style="margin: 0px;"><i>Workshop on Planning, Perception and Navigation for Intelligent Vehicles (<b>PPNIV @ IROS</b>)</i>, Kyoto, Japan, October 2022.</p>
-<p><a href="https://mucar3.de/iros2022-ppniv-tas-nir">Project Page</a> &middot; <a style="color: grey; text-decoration: none;" href="#">Paper</a> &middot; <a style="color: grey; text-decoration: none;" href="#">Dataset</a> &middot; <a href="bibtex/ppniv-iros2022.bib">Bibtex</a>
+<p><a href="https://mucar3.de/iros2022-ppniv-tas-nir">Project Page</a> &middot; <a href="https://project.inria.fr/ppniv22/files/2022/10/PPNIV_TAS-NIR_Paper.pdf">Paper</a> &middot; <a href="https://drive.google.com/uc?export=download&id=1nSyiQDfSvWPMjx4-6Mz01qSda_kPYpsG">Dataset</a> &middot; <a href="bibtex/ppniv-iros2022.bib">Bibtex</a>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-2 col-sm-2">
+<a href="/images/publications/iclr2023/Dpt_MonoDepth_Position_and_Scale.png" 
+data-lightbox="uoa-lightbox" 
+data-title="In this blog post, we investigate the performance of the vision transformer DPT for monocular depth estimation from single images. Here we compare an object's detected depth for DPT and the fully-convolutional MonoDepth when only changing the apparent size or the vertical position of an object." 
+data-alt=""><img src="/images/publications/iclr2023/Dpt_MonoDepth_Position_and_Scale.png" /></a>
+</div>
+<div class="col-10 col-sm-10">
+<p style="margin: 0px;"><b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
+<p style="margin: 0px;">"How Do Vision Transformers See Depth in Single Images?"</p>
+<p style="margin: 0px;"><i>Workshop on Scene Representations for Autonomous Driving (<b>SR4AD @ ICLR</b>)</i>, Kigali, Ruwanda, May 2023.</p>
+<p><a href="">Blog Post</a> &middot; <a href="https://sr4ad-vit-mde.github.io/web-slides/sr4ad/presentation.html">Presentation Slides</a> &middot; <a href="">Videos</a> &middot; <a href="bibtex/sr4ad-iclr2023.bib">Bibtex</a>
 </div>
 </div>
 
@@ -52,15 +69,14 @@ Here are all my talks that are publicly available.
 
 <div class="row">
 <div class="col-10 col-sm-10">
-<p style="margin: 0px;">Peter Mortimer</p> 
 <p style="margin: 0px;">"20/20 Robot Vision - How to setup cameras in ROS 1 & ROS 2 using camera_aravis"</p>
 <p style="margin: 0px;">ROSCon 2022, Kyoto, Japan.</p>
-<p><a style="color: grey; text-decoration: none;" href="#">Video</a> &middot; <a href="/images/publications/roscon2022/ROSCon2022_PeterMortimer_20-20_Robot_Vision.pdf">Slides</a> &middot; <a href="https://github.com/FraunhoferIOSB/camera_aravis">GitHub</a> 
+<p><a href="https://vimeo.com/showcase/9954564/video/767140329">Video</a> &middot; <a href="/images/publications/roscon2022/ROSCon2022_PeterMortimer_20-20_Robot_Vision.pdf">Slides</a> &middot; <a href="https://github.com/FraunhoferIOSB/camera_aravis">GitHub</a> 
 </div>
 <div class="col-2 col-sm-2">
-<a href="/images/publications/roscon2022/" 
+<a href="/images/publications/roscon2022/title-card.png" 
 data-lightbox="uoa-lightbox" 
-data-title="" 
-data-alt=""><img src="/images/publications/roscon2022/title-card.png" /></a>
+data-title="Industrial camera drivers like aravis give you control over many components of the image acquisiton process. Here you can observe the difference between minizing the gain (top) and minimizing the exposure time (bottom) on the amount of noise in the image." 
+data-alt=""><img src="/images/publications/roscon2022/title-card.png"/></a>
 </div>
 </div>

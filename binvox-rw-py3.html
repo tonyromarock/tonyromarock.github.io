@@ -8,25 +8,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 	<!--[if lt IE 9]>
-		<script src="https://tonyromarock.github.io/theme/html5.js"></script>
+		<script src="./theme/html5.js"></script>
 		<![endif]-->
-	<link href="https://tonyromarock.github.io/theme/css/ipython.css" rel="stylesheet">
-	<link href="https://tonyromarock.github.io/theme/css/jquery.tocify.css" rel="stylesheet">
-	<link href="https://tonyromarock.github.io/theme/css/lightbox.css" rel="stylesheet">
+	<link href="./theme/css/ipython.css" rel="stylesheet">
+	<link href="./theme/css/jquery.tocify.css" rel="stylesheet">
+	<link href="./theme/css/lightbox.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<!--
 	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet">
 	-->
-	<link href="https://tonyromarock.github.io/theme/css/local.css" rel="stylesheet">
-	<link href="https://tonyromarock.github.io/theme/css/pygments.css" rel="stylesheet">
+	<link href="./theme/css/local.css" rel="stylesheet">
+	<link href="./theme/css/pygments.css" rel="stylesheet">
 </head>
 <body>
 <div id="toc"></div><div class="container main">
 	<div class="page-header">
 		<div class="row">
 			<div class="col-8 col-sm-8">
-			<h1><a href="https://tonyromarock.github.io/">A Place for Asides</a>
+			<h1><a href="./">A Place for Asides</a>
 				<br>			</div>
 			<div class="col-4 col-sm-4 page-header-links">
 				<p><a href="/pages/about.html">About</a> | <a href="/pages/publications.html">Publications</a> | <a href="/pages/previous-projects.html">Previous Projects</a> | <a href="/">Blog</a> | <a href="/pages/books.html">Book List</a> </p>
@@ -49,7 +49,7 @@
 <p>Some research projects in the field of 3D machine learning may use this library to create voxelized scenes for training. These voxelized scenes are used to train networks to learn a rudimentary understanding of the scene's geometry in a more easily quantifiable way. This is how I stumbled upon the <a href="https://github.com/dimatura/binvox-rw-py">binvox-rw-py</a> module, which enables you to read .binvox files as 3-dimensional Numpy arrays in Python. You can also write numpy arrays into .binvox using binvox-rw-py.</p>
 <h3>Troubles with writing .binvox files in Python 3</h3>
 <p>The original binvox-rw-py from the GitHub user <a href="https://github.com/dimatura/">dimatura</a> has issues with writing .binvox files when running it in Python 3, since it was implemented with the byte handling of Python 2 in mind. I discovered this after a few frustrating hours by simply reading and writing the same .binvox file I generated for my project and comparing the resulting voxelized scenes using <a href="https://www.patrickmin.com/viewvox/">viewvox</a> (which is also from Patrick Min):</p>
-<p><img alt="Comparing the resulting voxelized scenes when reading and writing the same .binvox file using binvox-rw-py with Python 3. The left image shows the broken scene voxelization using dimatura's module with Python 3, while the right image shows the correct scene voxelization using pclausen's module with Python 3." src="https://tonyromarock.github.io/images/binvox/binvox_write_compare.png"></p>
+<p><img alt="Comparing the resulting voxelized scenes when reading and writing the same .binvox file using binvox-rw-py with Python 3. The left image shows the broken scene voxelization using dimatura's module with Python 3, while the right image shows the correct scene voxelization using pclausen's module with Python 3." src="./images/binvox/binvox_write_compare.png"></p>
 <p>Luckly, the GitHub user <a href="https://github.com/pclausen/">pclausen</a> has already created a forked version of the <a href="https://github.com/pclausen/binvox-rw-py">binvox-rw-py</a> module that resolves this issue. This makes it possible to also use binvox-rw-py with Python 3.</p>
 <p>Unfortunately, the fixed binvox-rw-py module by pclausen does not seem as well known as the original module by dimatura if you compare the number of stars for each GitHub repository (at the time of writing dimatura's repository has 69 stars, while pclausen's repo only has 2 stars). pclausen has even originally created an <a href="https://github.com/dimatura/binvox-rw-py/issues/3">issue</a> in dimatura's issue tracker for the binvox-rw-py regarding the Python 3 writing issue. The issue has not been closed even until today.</p>
 <p>So I hope this post could help someone, who has been having issues using binvox-rw-py with Python 3 and save the person some time when trying to find the bug in his code.</p>
@@ -60,17 +60,17 @@
 	<div>
 		Category:
 		<span itemprop="articleSection">
-			<a href="https://tonyromarock.github.io/category/python.html" rel="category">Python</a>
+			<a href="./category/python.html" rel="category">Python</a>
 		</span>
 	</div>
  
 	<div>
 		Tags:
 		<span itemprop="keywords">
-			<a href="https://tonyromarock.github.io/tag/binvox.html" rel="tag">binvox</a>
+			<a href="./tag/binvox.html" rel="tag">binvox</a>
 		</span>
 		<span itemprop="keywords">
-			<a href="https://tonyromarock.github.io/tag/pip.html" rel="tag">pip</a>
+			<a href="./tag/pip.html" rel="tag">pip</a>
 		</span>
 	</div>
 </div>
@@ -85,13 +85,12 @@
 					<div class="col-md-3">
 						<h4>Navigation</h4>
 						<ul class="list-unstyled my-list-style">
-							<li><a href="https://tonyromarock.github.io">A Place for Asides</a></li>
-							<li><a href="https://tonyromarock.github.io/pages/about.html"><i class="fa fa-About "></i> About</a></li>
-							<li><a href="https://tonyromarock.github.io/pages/blogroll.html"><i class="fa fa-Blogroll "></i> Blogroll</a></li>
-							<li><a href="https://tonyromarock.github.io/pages/books.html"><i class="fa fa-Books I've Read "></i> Books I've Read</a></li>
-							<li><a href="https://tonyromarock.github.io/pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
-							<li><a href="https://tonyromarock.github.io/pages/publications.html"><i class="fa fa-Publications "></i> Publications</a></li>
-							<li><a href="https://tonyromarock.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+							<li><a href=".">A Place for Asides</a></li>
+							<li><a href="./pages/about.html"><i class="fa fa-About "></i> About</a></li>
+							<li><a href="./pages/blogroll.html"><i class="fa fa-Blogroll "></i> Blogroll</a></li>
+							<li><a href="./pages/books.html"><i class="fa fa-Books I've Read "></i> Books I've Read</a></li>
+							<li><a href="./pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
+							<li><a href="./pages/publications.html"><i class="fa fa-Publications "></i> Publications</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3">
@@ -103,9 +102,9 @@
 					<div class="col-md-3">
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
-							<li><a href="https://tonyromarock.github.io/category/linux.html">Linux (1)</a></li>
-							<li><a href="https://tonyromarock.github.io/category/nonfiction.html">Nonfiction (1)</a></li>
-							<li><a href="https://tonyromarock.github.io/category/python.html">Python (3)</a></li>
+							<li><a href="./category/linux.html">Linux (1)</a></li>
+							<li><a href="./category/nonfiction.html">Nonfiction (1)</a></li>
+							<li><a href="./category/python.html">Python (3)</a></li>
 						</ul>
 					</div>
 				</div>
@@ -123,9 +122,9 @@
 </div>
 <!-- JavaScript -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://tonyromarock.github.io/theme/js/jquery-ui-1.9.1.custom.min.js"></script>
-<script src="https://tonyromarock.github.io/theme/js/jquery.tocify.min.js"></script>
-<script src="https://tonyromarock.github.io/theme/js/lightbox.js"></script>
+<script src="./theme/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="./theme/js/jquery.tocify.min.js"></script>
+<script src="./theme/js/lightbox.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
