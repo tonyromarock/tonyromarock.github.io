@@ -6,7 +6,20 @@ Slug: publications
 Authors: Peter Mortimer
 Summary: An list of my research publications.
 
-# Publications
+<div class="row">
+<div class="col-7 col-sm-7">
+<h1 style="text-align:center">Peter Mortimer</h1>
+<p><br/><br/></p>
+<p style="margin: 0px;">I'm a PhD candidate at the Bundeswehr University in Munich. I'm interested in Machine Learning, Computer Vision, and Data Visualization.</p>
+<p><br/></p>
+<p style="margin: 0px; text-align: center;"><a href="mailto:peter.mortimer@unibw.de">Email</a> &middot; <a href="https://github.com/tonyromarock">GitHub</a> &middot; <a href="https://scholar.google.com/citations?user=ckEIQp0AAAAJ">Google Scholar</a> &middot; <a href="https://arxiv.org/search/cs?query=Mortimer%2C+Peter&searchtype=author&abstracts=show&order=-announced_date_first">arXiv</a></p>
+</div>
+<div class="col-5 col-sm-5">
+<a href="/images/about/peter_kyoto.jpg"><img style="width:100%;max-width:100%;border-radius: 50%;" src="/images/about/peter_kyoto.jpg"/></a>
+</div>
+</div>
+
+# Research
 
 Here are all my publcations listed with links to the papers and repositories.
 
@@ -14,16 +27,33 @@ Here are all my publcations listed with links to the papers and repositories.
 
 <div class="row">
 <div class="col-2 col-sm-2">
-<a href="/images/publications/icpr2020/image_cube.png" 
+<a href="/images/publications/icra2024/goose-title-card.jpg" 
 data-lightbox="uoa-lightbox" 
-data-title="TAS500 is a novel semantic segmentation dataset for autonomous driving in unstructured environments. TAS500 offers fine-grained vegetation and terrain classes to learn drivable surfaces and natural obstacles in outdoor scenes effectively." 
-data-alt=""><img src="/images/publications/icpr2020/image_cube.png" /></a>
+data-title="We present the German Outdoor and Offroad Dataset (GOOSE), a comprehensive dataset specifically designed for unstructured outdoor environments. The GOOSE dataset incorporates 10 000 labeled pairs of images and point clouds, which are utilized to train a range of state-of-the-art segmentation models on both image and point cloud data. We open source the dataset, along with an ontology for unstructured terrain, as well as dataset standards and guidelines." 
+data-alt=""><img src="/images/publications/icra2024/goose-title-card.jpg"/></a>
 </div>
 <div class="col-10 col-sm-10">
-<p style="margin: 0px;">Kai Andreas Metzger, <b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
-<p style="margin: 0px;">"A Fine-Grained Dataset and its Efficient Semantic Segmentation for Unstructured Driving Scenarios"</p>
-<p style="margin: 0px;"><i>International Conference on Pattern Recognition (<b>ICPR</b>)</i>, Milan, Italy, January 2021.</p>
-<p><a href="https://mucar3.de/icpr2020-tas500/">Project Page</a> &middot; <a href="https://drive.google.com/file/d/1TeJK-3EBkXzD9FCq4LOLGFRD3lmKqVdp/view">Paper</a> &middot; <a href="https://rzunibw-my.sharepoint.com/:f:/g/personal/thorsten_luettel_rzunibw_onmicrosoft_com/Evdia5SSRaRPuSO2CNsNHY8B3xdK8eHpG-9DSaeEbIJyUw?e=M6NMqI">Dataset</a> &middot; <a href="bibtex/icpr2020.bib">Bibtex</a>  <!--&middot; <a href="/">GitHub</a> --> 
+<p style="margin: 0px;"><b>Peter Mortimer</b>, Raphael Hagmanns, Miguel Granero, Thorsten Luettel, Janko Petereit and Hans-Joachim Wuensche</p> 
+<p style="margin: 0px;">"The GOOSE Dataset for Perception in Unstructured Environments"</p>
+<p style="margin: 0px;"><i>International Conference on Robotics and Automation (<b>ICRA</b>)</i>, Yokohama, Japan, May 2024.</p>
+<p><a href="https://goose-dataset.de/">Project Page</a> &middot; <a href="https://goose-dataset.de/">Paper</a> &middot; <a href="bibtex/icra2024.bib">Bibtex</a>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+<div class="col-2 col-sm-2">
+<a href="/images/publications/iclr2023/Dpt_MonoDepth_Position_and_Scale.png" 
+data-lightbox="uoa-lightbox" 
+data-title="In this blog post, we investigate the performance of the vision transformer DPT for monocular depth estimation from single images. Here we compare an object's detected depth for DPT and the fully-convolutional MonoDepth when only changing the apparent size or the vertical position of an object." 
+data-alt=""><img src="/images/publications/iclr2023/Dpt_MonoDepth_Position_and_Scale.png" /></a>
+</div>
+<div class="col-10 col-sm-10">
+<p style="margin: 0px;"><b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
+<p style="margin: 0px;">"How Do Vision Transformers See Depth in Single Images?"</p>
+<p style="margin: 0px;"><i>Workshop on Scene Representations for Autonomous Driving (<b>SR4AD @ ICLR</b>)</i>, Kigali, Ruwanda, May 2023.</p>
+<p><a href="https://sr4ad-vit-mde.github.io/blog/2023/visual-cues-monocular-depth-estimation/">Blog Post</a> &middot; <a href="https://sr4ad-vit-mde.github.io/web-slides/sr4ad/presentation.html">Presentation Slides</a> &middot; <a href="https://youtu.be/0ccu72jOh_k?si=jqaIerl58flkffah&t=2540">Videos</a> &middot; <a href="bibtex/sr4ad-iclr2023.bib">Bibtex</a>
 </div>
 </div>
 
@@ -48,18 +78,20 @@ data-alt=""><img src="/images/publications/iros2022/title-card.png" /></a>
 
 <div class="row">
 <div class="col-2 col-sm-2">
-<a href="/images/publications/iclr2023/Dpt_MonoDepth_Position_and_Scale.png" 
+<a href="/images/publications/icpr2020/image_cube.png" 
 data-lightbox="uoa-lightbox" 
-data-title="In this blog post, we investigate the performance of the vision transformer DPT for monocular depth estimation from single images. Here we compare an object's detected depth for DPT and the fully-convolutional MonoDepth when only changing the apparent size or the vertical position of an object." 
-data-alt=""><img src="/images/publications/iclr2023/Dpt_MonoDepth_Position_and_Scale.png" /></a>
+data-title="TAS500 is a novel semantic segmentation dataset for autonomous driving in unstructured environments. TAS500 offers fine-grained vegetation and terrain classes to learn drivable surfaces and natural obstacles in outdoor scenes effectively." 
+data-alt=""><img src="/images/publications/icpr2020/image_cube.png" /></a>
 </div>
 <div class="col-10 col-sm-10">
-<p style="margin: 0px;"><b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
-<p style="margin: 0px;">"How Do Vision Transformers See Depth in Single Images?"</p>
-<p style="margin: 0px;"><i>Workshop on Scene Representations for Autonomous Driving (<b>SR4AD @ ICLR</b>)</i>, Kigali, Ruwanda, May 2023.</p>
-<p><a href="">Blog Post</a> &middot; <a href="https://sr4ad-vit-mde.github.io/web-slides/sr4ad/presentation.html">Presentation Slides</a> &middot; <a href="">Videos</a> &middot; <a href="bibtex/sr4ad-iclr2023.bib">Bibtex</a>
+<p style="margin: 0px;">Kai Andreas Metzger, <b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
+<p style="margin: 0px;">"A Fine-Grained Dataset and its Efficient Semantic Segmentation for Unstructured Driving Scenarios"</p>
+<p style="margin: 0px;"><i>International Conference on Pattern Recognition (<b>ICPR</b>)</i>, Milan, Italy, January 2021.</p>
+<p><a href="https://mucar3.de/icpr2020-tas500/">Project Page</a> &middot; <a href="https://drive.google.com/file/d/1TeJK-3EBkXzD9FCq4LOLGFRD3lmKqVdp/view">Paper</a> &middot; <a href="https://rzunibw-my.sharepoint.com/:f:/g/personal/thorsten_luettel_rzunibw_onmicrosoft_com/Evdia5SSRaRPuSO2CNsNHY8B3xdK8eHpG-9DSaeEbIJyUw?e=M6NMqI">Dataset</a> &middot; <a href="bibtex/icpr2020.bib">Bibtex</a>  <!--&middot; <a href="/">GitHub</a> --> 
 </div>
 </div>
+
+<hr>
 
 # Talks
 

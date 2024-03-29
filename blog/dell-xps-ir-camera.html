@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Using the Infrared Camera of the Dell XPS on Ubuntu 18.04 — A Place for Asides</title>
+	<meta name="description" content="Title: Using the Infrared Camera of the Dell XPS on Ubuntu 18.04; Date: 2019-11-05; Author: Peter Mortimer">
+	<meta name="author" content="Peter">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="../theme/html5.js"></script>
+		<![endif]-->
+	<link href="../theme/css/ipython.css" rel="stylesheet">
+	<link href="../theme/css/jquery.tocify.css" rel="stylesheet">
+	<link href="../theme/css/lightbox.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--
+	<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/minty/bootstrap.min.css" rel="stylesheet">
+	-->
+	<link href="../theme/css/local.css" rel="stylesheet">
+	<link href="../theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container main">
+	<div class="page-header">
+		<div class="row">
+			<div class="col-8 col-sm-8">
+			<h1><a href="../">A Place for Asides</a>
+				<br>			</div>
+			<div class="col-4 col-sm-4 page-header-links">
+				<p><a href="/pages/about.html">About</a> | <a href="/pages/publications.html">Publications</a> | <a href="/pages/previous-projects.html">Previous Projects</a> | <a href="/blog/index.html">Blog</a> | <a href="/pages/books.html">Book List</a> </p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Using the Infrared Camera of the Dell XPS on Ubuntu 18.04</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Peter Mortimer</h4>
+		</span>
+		<time datetime="2019-11-05T17:55:00+01:00" itemprop="datePublished">November 05 2019</time>
+	</div>
+	<div itemprop="articleBody" class="article-body"><p>I was interested in using the unusual webcam setup of my Dell XPS 13 9370 notebook for some personal projects. The Dell XPS 13 9370 does not only have a regular color camera but also an infrared camera. On Windows the infrared camera and the color camera are used for Windows Hello, which allows the user to secure his PC using facial authentication (<a href="https://github.com/boltgolt/howdy">Howdy</a> is the closest equivalent for Linux). But when I tried to access my infrared camera using tools like <code>fswebcam</code> or installing Howdy I ran into several issues.</p>
+<p>It turns out that the infrared camera of the Dell XPS 13 9370 uses an unusual 8-bit infrared video format called L8_IR (<a href="https://github.com/boltgolt/howdy/issues/88#issuecomment-457708769">see this GitHub Issue for Howdy</a>). This format is currently not supported by the driver in Ubuntu 18.04, but it was added to the linux kernel 4.19 (<a href="https://github.com/torvalds/linux/commit/557a5c7fe6503230f6a3a41441981aed6e897d17">see the commit here</a>) and that kernel version is expected to then be available on Ubuntu 19.04. That's good to know, but I still wanted to find a way to make use of the infrared camera on Ubuntu 18.04. </p>
+<p>Following an approach similar to <a href="https://stackoverflow.com/questions/25799264/characterizing-my-raw-camera-output">NSchrading on Stack Overflow</a> I tried to make sense of the raw data produced by the infrared camera using the following <code>fswebcam</code> command:</p>
+<div class="highlight"><pre><span></span>LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libv4l/v4l1compat.so fswebcam --palette GREY --device RAW:/dev/video1 --no-banner --no-timestamp --resolution &quot;340x340&quot; --dumpframe ir.raw
+</pre></div>
+
+
+<p>The command contains many optional arguments, so I will briefly break down what the individual arguments do: </p>
+<ul>
+<li><code>LD_PRELOAD</code> provides the absolute path to the Video4Linux library on my system, which has to be <a href="https://stackoverflow.com/questions/426230/what-is-the-ld-preload-trick">preloaded</a> for <code>fswebcam</code> to correctly read from the raw video source of the infrared camera. You might have to change this path if Video4Linux is stored somewhere else on your system (<a href="https://www.raspberrypi.org/forums/viewtopic.php?t=86265#post_content859415">see this comment on how to find the v4l1compat.so</a>). </li>
+<li><code>--palette GREY</code> is the closest palette format supported by <code>fswebcam</code> to L8_IR. </li>
+<li><code>--device RAW:/dev/video1</code> specifies that we are reading the raw video data provided by the infrared camera, the color camera is found at <code>/dev/video0</code>. </li>
+<li><code>--no-banner --no-timestamp</code> remove the default banner added by <code>fswebcam</code>. </li>
+<li><code>--resolution "340x340"</code> defines the image resolution of the infrared camera, which is specified <a href="https://topics-cdn.dell.com/pdf/xps-13-9370-laptop_setup-guide_en-us.pdf">here</a> by Dell. </li>
+<li><code>--dumpframe</code> specifies that we want to dump the raw frame to a file.</li>
+</ul>
+<p>So running this command gives us an <code>ir.raw</code> file. You can also notice that the infrared emitters light up red when taking an infrared image.</p>
+<p><img alt="Both infrared emitters light up red when taking an image with the infrared camera." src="../images/ir_camera/ir_camera_crop.gif"></p>
+<p>Most programs cannot view .raw files, for this I wrote a quick script to validate if we are actually downloading a valid 8-bit infrared image. This <a href="https://lwn.net/Articles/218798/">blog post</a> by a Linux driver developer for camera devices explains very well how the different color formats for Video4Linux2 are defined using the <a href="https://www.fourcc.org/fourcc.php">fourcc</a> coding mechanism. The fornat for our 8-bit infrared format is <code>V4L_PIX_FMT_GREY</code>. So one byte describes the grayscale value for the given pixel. With this knowledge and knowing the output resolution of the infrared camera, we can write the following script to display the infrared image using matplotlib:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="n">grays</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">zeros</span><span class="p">((</span><span class="mi">340</span><span class="p">,</span><span class="mi">340</span><span class="p">),</span><span class="kp">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ir.raw&#39;</span><span class="p">,</span> <span class="s1">&#39;r+b&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">340</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">340</span><span class="p">):</span>
+            <span class="n">val</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">pixel</span> <span class="o">=</span> <span class="nb">int</span><span class="o">.</span><span class="n">from_bytes</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">byteorder</span><span class="o">=</span><span class="s1">&#39;big&#39;</span><span class="p">)</span>
+            <span class="n">grays</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">pixel</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grays</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>Here is an example image produced by my infrared camera:</p>
+<p><img alt="An example image produced by the infrared camera." src="../images/ir_camera/ir_face.png"></p>
+<p>So it took quite a bit to get to this point, but now we have the tools to implement some interesting Computer Vision applications using the stereo image setup of the Dell XPS 13 9370. I hope this is useful for other Dell users trying to get started with the built-in infrared camera.</p></div>
+	<hr>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="../blog/category/linux.html" rel="category">Linux</a>
+		</span>
+	</div>
+ 
+	<div>
+		Tags:
+		<span itemprop="keywords">
+			<a href="../blog/tag/fswebcam.html" rel="tag">fswebcam</a>
+		</span>
+		<span itemprop="keywords">
+			<a href="../blog/tag/image-processing.html" rel="tag">image processing</a>
+		</span>
+	</div>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="..">A Place for Asides</a></li>
+							<li><a href="../pages/about.html"><i class="fa fa-About "></i> About</a></li>
+							<li><a href="../pages/blogroll.html"><i class="fa fa-Blogroll "></i> Blogroll</a></li>
+							<li><a href="../pages/books.html"><i class="fa fa-Books I've Read "></i> Books I've Read</a></li>
+							<li><a href="../pages/previous-projects.html"><i class="fa fa-Previous Projects "></i> Previous Projects</a></li>
+							<li><a href="../pages/publications.html"><i class="fa fa-Publications "></i> Publications</a></li>
+							<li><a href="https://tonyromarock.github.io/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/tonyromarock">GitHub</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="../category/linux.html">Linux (1)</a></li>
+							<li><a href="../category/nonfiction.html">Nonfiction (1)</a></li>
+							<li><a href="../category/python.html">Python (3)</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container bottom">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Peter 2020</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="../theme/js/jquery-ui-1.9.1.custom.min.js"></script>
+<script src="../theme/js/jquery.tocify.min.js"></script>
+<script src="../theme/js/lightbox.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+$(function() { 
+	var toc = $("#toc").tocify({
+		context:"div.article-body", 
+		selectors:"h1,h3",
+		showAndHide:"false",
+		extendPage:"false",
+		history:"true",
+		scrollHistory:"true"
+	}).data("toc-tocify"); 
+
+});
+lightbox.option({
+	'wrapAround': true
+});
+</script>
+</body>
+</html>
