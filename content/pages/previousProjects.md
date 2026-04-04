@@ -8,7 +8,7 @@ Summary: An overview of previous projects I have worked on.
 
 # Previous Projects
 
-Here is a brief overview of different projects I have been working on over the course of my studies and internships. For many of the projects, the source code is not publicly available. Please visit my [GitHub profile](https://github.com/tonyromarock) if you are interested in the code I have written.
+Here is a brief overview of different projects I have been working on over the course of my studies and internships. For many of the projects, the source code is not publicly available. Please visit my [GitHub profile](https://github.com/pemo-ml) if you are interested in the code I have written.
 
 <hr>
 
@@ -32,6 +32,7 @@ data-alt="An image of a LiDAR road segment with visible cracks both along the ro
 <div class="row">
 <div class="col-8 col-sm-8">
 <p>In my master thesis I worked on using deep learning to detect the placement of 3D objects within a scene from a single RGB image of the indoor scene. I compared the predictive performance of using a point cloud object representation to a factored 3D object representation as output of the network architecture.</p>
+<p><a href="images/prev_projects/3D_Instances_from_a_single_RGB.pdf">Thesis</a> &middot; <a href="images/prev_projects/ma_thesis_presentation.pdf">Presentation Slides</a></p>
 <p><b>Technologies:</b> PyTorch</p>
 <p>September 2018 - May 2019</p>
 </div>
