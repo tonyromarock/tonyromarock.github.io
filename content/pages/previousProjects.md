@@ -20,10 +20,10 @@ Here is a brief overview of different projects I have been working on over the c
 <p>May 2019 - August 2019</p>
 </div>
 <div class="col-4 col-sm-4">
-<a href="/images/prev_projects/uare_pavement.png" 
+<a href="/images/prev_projects/uare_pavement.webp" 
 data-lightbox="uoa-lightbox" 
 data-title="A local thresholding on elevation gradients and intensity values allowed for the detection of longitudinal cracks and transverse cracks in high-resolution LiDAR point clouds." 
-data-alt="An image of a LiDAR road segment with visible cracks both along the road (so-called longitudinal cracks) and perpendicular to the road (so-called transverse cracks). For both type of cracks there is also an example image from the real world. The LiDAR recoding was made with the Tetra Tech PSP-7000 survey vehicle."><img src="/images/prev_projects/uare_pavement.png"></a>
+data-alt="An image of a LiDAR road segment with visible cracks both along the road (so-called longitudinal cracks) and perpendicular to the road (so-called transverse cracks). For both type of cracks there is also an example image from the real world. The LiDAR recoding was made with the Tetra Tech PSP-7000 survey vehicle."><img src="/images/prev_projects/uare_pavement.webp"></a>
 </div>
 </div>
 <hr>
@@ -37,22 +37,22 @@ data-alt="An image of a LiDAR road segment with visible cracks both along the ro
 <p>September 2018 - May 2019</p>
 </div>
 <div class="col-4 col-sm-4">
-<a href="/images/prev_projects/ma_bedroom_prediction.png" 
+<a href="/images/prev_projects/ma_bedroom_prediction.jpg" 
 data-lightbox="master-thesis-lightbox" 
 data-title="The Factored3D network uses a factored object representation to predict the 3D position of objects in a scene. In the factored object representation the voxelized shape, position, scale, and rotation are predicted separately. I experimented with using different point cloud loss functions to fine-tune the overall predicition performance in a holistic manner." 
-data-alt=""><img src="/images/prev_projects/ma_bedroom_prediction.png"></a>
+data-alt=""><img src="/images/prev_projects/ma_bedroom_prediction.jpg"></a>
 
-<a href="/images/prev_projects/ma_scene_predictions.png" 
+<a href="/images/prev_projects/ma_scene_predictions.jpg" 
 data-lightbox="master-thesis-lightbox" 
 style="display:none"
 data-title="Here are a few example predictions of Factored3D on synthetic indoor scenes from the SUNCG dataset. The first column shows the input image given to the network. The second column shows the ground truth voxelized shape and position of each object in the scene. The third column shows the predicted scene of Factored3D trained using the suggested training stages by the original authors Tulsiani et al. The fourth column shows the predicted scene using the additional Earth Mover's distance on the point cloud representation of the objects to improve the overall prediction performance in a holistic manner." 
-data-alt="Here are a few example predictions of Factored3D on synthetic indoor scenes from the SUNCG dataset. The first column shows the input image given to the network. The second column shows the ground truth voxelized shape and position of each object in the scene. The third column shows the predicted scene of Factored3D trained using the suggested training stages by the original authors Tulsiani et al. The fourth column shows the predicted scene using the additional Earth Mover's distance on the point cloud representation of the objects to improve the overall prediction performance in a holistic manner."><img src="/images/prev_projects/ma_scene_predictions.png" style="visibilitydisplay:none;"></a>
+data-alt="Here are a few example predictions of Factored3D on synthetic indoor scenes from the SUNCG dataset. The first column shows the input image given to the network. The second column shows the ground truth voxelized shape and position of each object in the scene. The third column shows the predicted scene of Factored3D trained using the suggested training stages by the original authors Tulsiani et al. The fourth column shows the predicted scene using the additional Earth Mover's distance on the point cloud representation of the objects to improve the overall prediction performance in a holistic manner."><img src="/images/prev_projects/ma_scene_predictions.jpg" style="display:none;"></a>
 
-<a href="/images/prev_projects/ma_nyuv2_predictions.png" 
+<a href="/images/prev_projects/ma_nyuv2_predictions.jpg" 
 data-lightbox="master-thesis-lightbox" 
 style="display:none"
 data-title="Here are a few example predictions of Factored3D on real world indoor scenes from the NYU-Depth V2 dataset. The first column shows the input image and the predicted object bounding boxes of the original Factored3D implementation by Tulsiani et al. The second column shows the predicted objects in the scene of the original Factored3D implementation. The third column shows the input image and the predicted object bounding boxes produced by my implementation of Factored3D. The fourth column shows the predicted objects in the scene of my implementation of Factored3D, which uses the Earth Mover's distance as a loss function on the point cloud representation of the scene to improve the overall performance in a holistic manner." 
-data-alt="Here are a few example predictions of Factored3D on real world indoor scenes from the NYU-Depth V2 dataset. The first column shows the input image and the predicted object bounding boxes of the original Factored3D implementation by Tulsiani et al. The second column shows the predicted objects in the scene of the original Factored3D implementation. The third column shows the input image and the predicted object bounding boxes produced by my implementation of Factored3D. The fourth column shows the predicted objects in the scene of my implementation of Factored3D, which uses the Earth Mover's distance as a loss function on the point cloud representation of the scene to improve the overall performance in a holistic manner."><img src="/images/prev_projects/ma_nyuv2_predictions.png" style="display:none;"></a>
+data-alt="Here are a few example predictions of Factored3D on real world indoor scenes from the NYU-Depth V2 dataset. The first column shows the input image and the predicted object bounding boxes of the original Factored3D implementation by Tulsiani et al. The second column shows the predicted objects in the scene of the original Factored3D implementation. The third column shows the input image and the predicted object bounding boxes produced by my implementation of Factored3D. The fourth column shows the predicted objects in the scene of my implementation of Factored3D, which uses the Earth Mover's distance as a loss function on the point cloud representation of the scene to improve the overall performance in a holistic manner."><img src="/images/prev_projects/ma_nyuv2_predictions.jpg" style="display:none;"></a>
 
 </div>
 </div>
@@ -66,11 +66,11 @@ data-alt="Here are a few example predictions of Factored3D on real world indoor 
 <p>February 2018 - July 2018</p>
 </div>
 <div class="col-4 col-sm-4">
-<a href="/images/prev_projects/highway_detector.png" 
+<a href="/images/prev_projects/highway_detector.jpg" 
 data-lightbox="itu-cv-lightbox"
 data-title="During my exchange at the IT University of Copenhagen I worked on creating a car detector as part of the introduction to Computer Vision and Image Analysis course. For the car detector I used a shallow CNN, which took potential preselected image patches as input. The preselected image patches were determined by using a traditional background subtraction from an empty image of the highway." 
 data-alt="">
-<img src="/images/prev_projects/highway_detector.png"></a>
+<img src="/images/prev_projects/highway_detector.jpg"></a>
 </div>
 </div>
 <hr>
@@ -83,11 +83,11 @@ data-alt="">
 <p>August 2017 - November 2017</p>
 </div>
 <div class="col-4 col-sm-4">
-<a href="/images/prev_projects/cell_towers_mexico.png" 
+<a href="/images/prev_projects/cell_towers_mexico.webp" 
 data-lightbox="spirent-intern-lightbox"
 data-title="This graph marks the locations of all cell towers in Mexico and compares this to all cell towers within a 10km radius to a commercial airport in Mexico. For the prototype I was developing, we were focusing on air travel and reducing the query size by limiting the search space of possible cell towers made the analysis feasible. You can tell from the left graph, that cell towers are placed along main roads and around highly populated areas." 
 data-alt="This graph marks the locations of all cell towers in Mexico and compares this to all cell towers within a 10km radius to a commercial airport in Mexico. For the prototype I was developing, we were focusing on air travel and reducing the query size by limiting the search space of possible cell towers made the analysis feasible. You can tell from the left graph, that cell towers are placed along main roads and around highly populated areas.">
-<img src="/images/prev_projects/cell_towers_mexico.png"></a>
+<img src="/images/prev_projects/cell_towers_mexico.webp"></a>
 </div>
 </div>
 <hr>
@@ -119,6 +119,9 @@ This system could then be used as a first filter to determine if a thereotical p
 <p>April 2016 - August 2016</p>
 </div>
 <div class="col-4 col-sm-4">
-<img src="/images/prev_projects/BA_image.png">
+<a href="images/prev_projects/BA_image.png"
+data-lightbox="bioinformatics-lightbox"
+data-title="In my bachelor thesis at the chair for Computer Graphics and Visualization I implemented novel visualization techniques to analyze ensemble data, particularly for the domain of weather data. The use of cutting geometries to create cutaway views allows one to reduce the visual clutter in the ensemble data without losing the overall visual context. I developed a demo and use case that allowed the placement of cutting geometries to create cutaway views.">
+<img src="/images/prev_projects/BA_image.png"></a>
 </div>
 </div>
