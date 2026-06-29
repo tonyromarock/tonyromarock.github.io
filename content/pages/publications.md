@@ -36,7 +36,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;"><b>Peter Mortimer</b>, Mirko Maehlisch</p> 
 <p style="margin: 0px;">"Diffusion-Based Image Augmentation for Semantic Segmentation in Outdoor Robotics"</p>
 <p style="margin: 0px;"><i>Workshop on Field Robotics (<b>W-FR @ ICRA</b>)</i>, Atlanta, USA, May 2025.</p>
-<p><a href="https://arxiv.org/abs/2507.00153">Paper</a> &middot; <a href="bibtex/wfr-icra2025.bib">Bibtex</a> &middot; <a href="https://norlab-ulaval.github.io/icra_workshop_field_robotics/">Workshop Page</a></p>  
+<p><a href="https://arxiv.org/abs/2507.00153">Paper</a> &middot; <a href="pages/bibtex/wfr-icra2025.bib">Bibtex</a> &middot; <a href="https://norlab-ulaval.github.io/icra_workshop_field_robotics/">Workshop Page</a></p>  
 </div>
 </div>
 
@@ -53,7 +53,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;">Raphael Hagmanns, <b>Peter Mortimer</b>, Miguel Granero, Thorsten Luettel and Janko Petereit</p> 
 <p style="margin: 0px;">"Excavating in the Wild: The GOOSE-Ex Dataset for Semantic Segmentation"</p>
 <p style="margin: 0px;"><i>International Conference on Robotics and Automation (<b>ICRA</b>)</i>, Atlanta, USA, May 2025.</p>
-<p><a href="https://goose-dataset.de/">Project Page</a> &middot; <a href="https://arxiv.org/abs/2409.18788">Paper</a> &middot; <a href="bibtex/icra2025.bib">Bibtex</a></p>  
+<p><a href="https://goose-dataset.de/">Project Page</a> &middot; <a href="https://arxiv.org/abs/2409.18788">Paper</a> &middot; <a href="pages/bibtex/icra2025.bib">Bibtex</a></p>  
 </div>
 </div>
 
@@ -70,7 +70,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;"><b>Peter Mortimer</b> and Mirko Maehlisch</p> 
 <p style="margin: 0px;">"Survey on Datasets for Perception in Unstructured Outdoor Environments"</p>
 <p style="margin: 0px;"><i>Workshop on Field Robotics (<b>W-FR @ ICRA</b>)</i>, Yokohama, Japan, May 2024.</p>
-<p><a href="https://arxiv.org/pdf/2404.18750">Paper</a> &middot; <a href="bibtex/wfr-icra2024.bib">Bibtex</a> &middot; <a href="https://norlab-ulaval.github.io/workshop_field_robotics_icra2024/">Workshop Page</a></p>
+<p><a href="https://arxiv.org/pdf/2404.18750">Paper</a> &middot; <a href="pages/bibtex/wfr-icra2024.bib">Bibtex</a> &middot; <a href="https://norlab-ulaval.github.io/workshop_field_robotics_icra2024/">Workshop Page</a></p>
 </div>
 </div>
 
@@ -87,7 +87,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;"><b>Peter Mortimer</b>, Raphael Hagmanns, Miguel Granero, Thorsten Luettel, Janko Petereit and Hans-Joachim Wuensche</p> 
 <p style="margin: 0px;">"The GOOSE Dataset for Perception in Unstructured Environments"</p>
 <p style="margin: 0px;"><i>International Conference on Robotics and Automation (<b>ICRA</b>)</i>, Yokohama, Japan, May 2024.</p>
-<p><a href="https://goose-dataset.de/">Project Page</a> &middot; <a href="https://arxiv.org/pdf/2310.16788">Paper</a> &middot; <a href="bibtex/icra2024.bib">Bibtex</a></p>
+<p><a href="https://goose-dataset.de/">Project Page</a> &middot; <a href="https://arxiv.org/pdf/2310.16788">Paper</a> &middot; <a href="pages/bibtex/icra2024.bib">Bibtex</a></p>
 </div>
 </div>
 
@@ -104,7 +104,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;"><b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
 <p style="margin: 0px;">"How Do Vision Transformers See Depth in Single Images?"</p>
 <p style="margin: 0px;"><i>Workshop on Scene Representations for Autonomous Driving (<b>SR4AD @ ICLR</b>)</i>, Kigali, Ruwanda, May 2023.</p>
-<p><a href="https://sr4ad-vit-mde.github.io/blog/2023/visual-cues-monocular-depth-estimation/">Blog Post</a> &middot; <a href="https://sr4ad-vit-mde.github.io/web-slides/sr4ad/presentation.html">Presentation Slides</a> &middot; <a href="https://youtu.be/0ccu72jOh_k?si=jqaIerl58flkffah&t=2540">Videos</a> &middot; <a href="bibtex/sr4ad-iclr2023.bib">Bibtex</a></p>
+<p><a href="https://sr4ad-vit-mde.github.io/blog/2023/visual-cues-monocular-depth-estimation/">Blog Post</a> &middot; <a href="https://sr4ad-vit-mde.github.io/web-slides/sr4ad/presentation.html">Presentation Slides</a> &middot; <a href="https://youtu.be/0ccu72jOh_k?si=jqaIerl58flkffah&t=2540">Videos</a> &middot; <a href="pages/bibtex/sr4ad-iclr2023.bib">Bibtex</a></p>
 </div>
 </div>
 
@@ -121,7 +121,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;"><b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
 <p style="margin: 0px;">"TAS-NIR: A VIS+NIR Dataset for Fine-grained Semantic Segmentation in Unstructured Outdoor Environments"</p>
 <p style="margin: 0px;"><i>Workshop on Planning, Perception and Navigation for Intelligent Vehicles (<b>PPNIV @ IROS</b>)</i>, Kyoto, Japan, October 2022.</p>
-<p><a href="https://mucar3.de/iros2022-ppniv-tas-nir">Project Page</a> &middot; <a href="https://project.inria.fr/ppniv22/files/2022/10/PPNIV_TAS-NIR_Paper.pdf">Paper</a> &middot; <a href="https://drive.google.com/uc?export=download&id=1nSyiQDfSvWPMjx4-6Mz01qSda_kPYpsG">Dataset</a> &middot; <a href="bibtex/ppniv-iros2022.bib">Bibtex</a></p>
+<p><a href="https://mucar3.de/iros2022-ppniv-tas-nir">Project Page</a> &middot; <a href="https://project.inria.fr/ppniv22/files/2022/10/PPNIV_TAS-NIR_Paper.pdf">Paper</a> &middot; <a href="https://drive.google.com/uc?export=download&id=1nSyiQDfSvWPMjx4-6Mz01qSda_kPYpsG">Dataset</a> &middot; <a href="pages/bibtex/ppniv-iros2022.bib">Bibtex</a></p>
 </div>
 </div>
 
@@ -138,7 +138,7 @@ data-alt=""><img style="border-radius: 5%; box-shadow: 2px 2px 5px rgba(0, 0, 0,
 <p style="margin: 0px;">Kai Andreas Metzger, <b>Peter Mortimer</b> and Hans-Joachim Wuensche</p> 
 <p style="margin: 0px;">"A Fine-Grained Dataset and its Efficient Semantic Segmentation for Unstructured Driving Scenarios"</p>
 <p style="margin: 0px;"><i>International Conference on Pattern Recognition (<b>ICPR</b>)</i>, Milan, Italy, January 2021.</p>
-<p><a href="https://mucar3.de/icpr2020-tas500/">Project Page</a> &middot; <a href="https://drive.google.com/file/d/1TeJK-3EBkXzD9FCq4LOLGFRD3lmKqVdp/view">Paper</a> &middot; <a href="https://rzunibw-my.sharepoint.com/:f:/g/personal/thorsten_luettel_rzunibw_onmicrosoft_com/Evdia5SSRaRPuSO2CNsNHY8B3xdK8eHpG-9DSaeEbIJyUw?e=M6NMqI">Dataset</a> &middot; <a href="https://underline.io/lecture/11831-a-fine-grained-dataset-and-its-efficient-semantic-segmentation-for-unstructured-driving-scenarios">Video</a> &middot; <a href="bibtex/icpr2020.bib">Bibtex</a></p>
+<p><a href="https://mucar3.de/icpr2020-tas500/">Project Page</a> &middot; <a href="https://drive.google.com/file/d/1TeJK-3EBkXzD9FCq4LOLGFRD3lmKqVdp/view">Paper</a> &middot; <a href="https://rzunibw-my.sharepoint.com/:f:/g/personal/thorsten_luettel_rzunibw_onmicrosoft_com/Evdia5SSRaRPuSO2CNsNHY8B3xdK8eHpG-9DSaeEbIJyUw?e=M6NMqI">Dataset</a> &middot; <a href="https://underline.io/lecture/11831-a-fine-grained-dataset-and-its-efficient-semantic-segmentation-for-unstructured-driving-scenarios">Video</a> &middot; <a href="pages/bibtex/icpr2020.bib">Bibtex</a></p>
 </div>
 </div>
 
